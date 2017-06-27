@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="KEFitReadingViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXV-EC-gm0" customClass="KEArticleWebView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </webView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="oXV-EC-gm0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3wv-fS-xpE"/>
+                <constraint firstItem="oXV-EC-gm0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bSj-Rw-a3o"/>
+                <constraint firstAttribute="trailing" secondItem="oXV-EC-gm0" secondAttribute="trailing" id="dl1-hg-OOo"/>
+                <constraint firstAttribute="bottom" secondItem="oXV-EC-gm0" secondAttribute="bottom" id="vpc-xV-pPu"/>
+            </constraints>
+            <size key="customSize" width="50" height="112"/>
+            <connections>
+                <outlet property="webView" destination="oXV-EC-gm0" id="0fe-xQ-KFb"/>
+            </connections>
+            <point key="canvasLocation" x="103" y="169"/>
+        </collectionViewCell>
+    </objects>
+</document>

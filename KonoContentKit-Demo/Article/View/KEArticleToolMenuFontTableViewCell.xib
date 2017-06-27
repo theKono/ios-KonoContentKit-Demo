@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XuO-ka-JWm" customClass="KEArticleToolMenuFontTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FontSize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSk-N1-Twe">
+                    <rect key="frame" x="134" y="10" width="52" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.3411764706" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILM-EK-C23">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.9137254901960784" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="IkH-fg-wQV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="xSk-N1-Twe" firstAttribute="top" secondItem="XuO-ka-JWm" secondAttribute="top" constant="10" id="C6w-my-JBa"/>
+                <constraint firstItem="xSk-N1-Twe" firstAttribute="centerX" secondItem="XuO-ka-JWm" secondAttribute="centerX" id="Qbj-MQ-LGN"/>
+                <constraint firstItem="ILM-EK-C23" firstAttribute="top" secondItem="XuO-ka-JWm" secondAttribute="top" id="Rdv-KS-jN1"/>
+                <constraint firstItem="ILM-EK-C23" firstAttribute="centerX" secondItem="xSk-N1-Twe" secondAttribute="centerX" id="hx9-IC-qAY"/>
+                <constraint firstItem="ILM-EK-C23" firstAttribute="leading" secondItem="XuO-ka-JWm" secondAttribute="leading" id="n3e-Mc-pZU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="adjustLabel" destination="xSk-N1-Twe" id="OPg-Rd-KQv"/>
+            </connections>
+            <point key="canvasLocation" x="286" y="161"/>
+        </view>
+    </objects>
+</document>

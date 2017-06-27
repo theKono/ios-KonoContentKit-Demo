@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KELibraryTitleHeaderView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vx6-n3-99K" customClass="KELibraryTitleHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wME-v1-Pzc">
+                    <rect key="frame" x="149" y="87" width="23" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="1ht-wu-gUq"/>
+                    </constraints>
+                    <state key="normal" image="btn_issue_list_show_description_normal">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="btn_issue_list_show_description_pressed"/>
+                    <state key="highlighted" image="btn_issue_list_show_description_pressed"/>
+                    <connections>
+                        <action selector="showDescriptionBtnPressed:" destination="vx6-n3-99K" eventType="touchUpInside" id="NMG-k7-YHr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading please wait" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh7-lu-LDD">
+                    <rect key="frame" x="15" y="15" width="290" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="fxb-Ck-EFU"/>
+                        <constraint firstAttribute="width" constant="570" id="g35-6b-ZLo"/>
+                        <constraint firstAttribute="height" constant="51" id="rMi-MO-D40"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="fxb-Ck-EFU"/>
+                            <exclude reference="g35-6b-ZLo"/>
+                            <exclude reference="rMi-MO-D40"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Rh7-lu-LDD" firstAttribute="top" secondItem="vx6-n3-99K" secondAttribute="top" constant="15" id="42y-2Y-K73"/>
+                <constraint firstItem="wME-v1-Pzc" firstAttribute="top" secondItem="Rh7-lu-LDD" secondAttribute="bottom" constant="10" id="LgN-bl-U23"/>
+                <constraint firstAttribute="trailing" secondItem="Rh7-lu-LDD" secondAttribute="trailing" constant="15" id="Xmw-at-mtb"/>
+                <constraint firstItem="Rh7-lu-LDD" firstAttribute="leading" secondItem="vx6-n3-99K" secondAttribute="leading" constant="15" id="dsm-Ec-3DY"/>
+                <constraint firstAttribute="bottom" secondItem="wME-v1-Pzc" secondAttribute="bottom" constant="10" id="ia9-Iv-XQf"/>
+                <constraint firstItem="wME-v1-Pzc" firstAttribute="centerX" secondItem="Rh7-lu-LDD" secondAttribute="centerX" id="ogr-ug-DPl"/>
+                <constraint firstAttribute="centerX" secondItem="wME-v1-Pzc" secondAttribute="centerX" id="sQM-hr-MYi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ogr-ug-DPl"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="showDescriptionBtn" destination="wME-v1-Pzc" id="NIu-vW-8Ry"/>
+                <outlet property="titleDescription" destination="Rh7-lu-LDD" id="oJa-E5-cOB"/>
+            </connections>
+            <point key="canvasLocation" x="382" y="373"/>
+        </view>
+        <view contentMode="scaleToFill" id="1S9-42-NzA" customClass="KELibraryTitleHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="701" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2L-ge-8xH">
+                    <rect key="frame" x="30" y="30" width="641" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="gFb-h1-QbS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="gFb-h1-QbS"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="f2L-ge-8xH" secondAttribute="trailing" constant="30" id="3Tw-mh-L4g"/>
+                <constraint firstAttribute="bottom" secondItem="f2L-ge-8xH" secondAttribute="bottom" constant="30" id="QAL-L1-Drs"/>
+                <constraint firstItem="f2L-ge-8xH" firstAttribute="top" secondItem="1S9-42-NzA" secondAttribute="top" constant="30" id="SoG-qk-0zm"/>
+                <constraint firstItem="f2L-ge-8xH" firstAttribute="leading" secondItem="1S9-42-NzA" secondAttribute="leading" constant="30" id="h3v-zD-soi"/>
+                <constraint firstAttribute="trailing" secondItem="f2L-ge-8xH" secondAttribute="trailing" constant="117" id="hv5-QP-UgJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QAL-L1-Drs"/>
+                    <exclude reference="hv5-QP-UgJ"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="titleDescription" destination="f2L-ge-8xH" id="uuc-FA-08k"/>
+            </connections>
+            <point key="canvasLocation" x="432.5" y="630"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_issue_list_show_description_normal" width="23" height="23"/>
+        <image name="btn_issue_list_show_description_pressed" width="23" height="23"/>
+    </resources>
+</document>

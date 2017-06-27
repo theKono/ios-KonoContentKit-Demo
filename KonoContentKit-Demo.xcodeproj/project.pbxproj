@@ -1,0 +1,894 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D2DF4481EF8DC83002FD075 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2DF4471EF8DC83002FD075 /* libz.tbd */; };
+		4D34B9F91EFA1AD30063E2C0 /* KEArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D34B9F81EFA1AD30063E2C0 /* KEArticleViewController.m */; };
+		4D34BA251EFA1BC50063E2C0 /* KEFatPageWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D34BA201EFA1BC50063E2C0 /* KEFatPageWebView.m */; };
+		4D34BA261EFA1BC50063E2C0 /* KEPageWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D34BA221EFA1BC50063E2C0 /* KEPageWebView.m */; };
+		4D34BA271EFA1BC50063E2C0 /* NESandwichView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D34BA241EFA1BC50063E2C0 /* NESandwichView.m */; };
+		4D34BA2A1EFA1D640063E2C0 /* KERotationPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D34BA291EFA1D640063E2C0 /* KERotationPresentAnimation.m */; };
+		4D34BA2B1EFB82530063E2C0 /* KonoContentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2DF4421EF8D4EE002FD075 /* KonoContentKit.framework */; };
+		4D8B22D81EEFD3FC00B82050 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B22D71EEFD3FC00B82050 /* main.m */; };
+		4D8B22DB1EEFD3FC00B82050 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B22DA1EEFD3FC00B82050 /* AppDelegate.m */; };
+		4D8B22E11EEFD3FC00B82050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B22DF1EEFD3FC00B82050 /* Main.storyboard */; };
+		4D8B22E31EEFD3FC00B82050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B22E21EEFD3FC00B82050 /* Assets.xcassets */; };
+		4D8B22E61EEFD3FC00B82050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B22E41EEFD3FC00B82050 /* LaunchScreen.storyboard */; };
+		4D8B22F11EEFD3FD00B82050 /* KonoContentKit_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B22F01EEFD3FD00B82050 /* KonoContentKit_DemoTests.m */; };
+		4D8B23021EF0F34B00B82050 /* KEShowcaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23011EF0F34B00B82050 /* KEShowcaseTableView.m */; };
+		4D8B23071EF0F38500B82050 /* KEColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23041EF0F38500B82050 /* KEColor.m */; };
+		4D8B230F1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B230E1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m */; };
+		4D8B23141EF114D300B82050 /* KELibraryTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23121EF114D300B82050 /* KELibraryTitleHeaderView.m */; };
+		4D8B23151EF114D300B82050 /* KELibraryTitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B23131EF114D300B82050 /* KELibraryTitleHeaderView.xib */; };
+		4D8B231A1EF114F800B82050 /* KELibraryBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23171EF114F800B82050 /* KELibraryBookCell.m */; };
+		4D8B231B1EF114F800B82050 /* KELibraryBookCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B23181EF114F800B82050 /* KELibraryBookCell~ipad.xib */; };
+		4D8B231C1EF114F800B82050 /* KELibraryBookCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B23191EF114F800B82050 /* KELibraryBookCell~iphone.xib */; };
+		4D8B23251EF11B0600B82050 /* KETextUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23241EF11B0600B82050 /* KETextUtil.m */; };
+		4DDF745B1EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74471EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m */; };
+		4DDF745C1EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74481EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.xib */; };
+		4DDF745D1EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF744A1EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.m */; };
+		4DDF745E1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF744D1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.m */; };
+		4DDF745F1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF744E1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.xib */; };
+		4DDF74601EFCCC7200A719B5 /* KEBookLibraryItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74501EFCCC7200A719B5 /* KEBookLibraryItemCell.m */; };
+		4DDF74611EFCCC7200A719B5 /* KEBookLibraryItemCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74511EFCCC7200A719B5 /* KEBookLibraryItemCell~ipad.xib */; };
+		4DDF74621EFCCC7200A719B5 /* KEBookLibraryItemCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74521EFCCC7200A719B5 /* KEBookLibraryItemCell~iphone.xib */; };
+		4DDF74631EFCCC7200A719B5 /* KEBookLibraryTOCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74541EFCCC7200A719B5 /* KEBookLibraryTOCCell.m */; };
+		4DDF74641EFCCC7200A719B5 /* KEBookLibraryTOCCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74551EFCCC7200A719B5 /* KEBookLibraryTOCCell~ipad.xib */; };
+		4DDF74651EFCCC7200A719B5 /* KEBookLibraryTOCCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74561EFCCC7200A719B5 /* KEBookLibraryTOCCell~iphone.xib */; };
+		4DDF74661EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74581EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.m */; };
+		4DDF74671EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74591EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~ipad.xib */; };
+		4DDF74681EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF745A1EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~iphone.xib */; };
+		4DDF746B1EFCCF7400A719B5 /* KEUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF746A1EFCCF7400A719B5 /* KEUtil.m */; };
+		4DDF74711F00C56B00A719B5 /* KEArticleFitReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74701F00C56B00A719B5 /* KEArticleFitReadingViewController.m */; };
+		4DDF74791F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74741F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.m */; };
+		4DDF747A1F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74751F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.xib */; };
+		4DDF747B1F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74771F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.m */; };
+		4DDF747C1F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74781F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.xib */; };
+		4DDF74831F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF747E1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.m */; };
+		4DDF74841F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF747F1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.xib */; };
+		4DDF74851F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74811F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.m */; };
+		4DDF74861F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74821F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.xib */; };
+		4DDF748A1F00C78300A719B5 /* KEFitReadingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74881F00C78300A719B5 /* KEFitReadingViewCell.m */; };
+		4DDF748B1F00C78300A719B5 /* KEFitReadingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74891F00C78300A719B5 /* KEFitReadingViewCell.xib */; };
+		4DDF748E1F00CD4C00A719B5 /* KEArticleWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF748D1F00CD4C00A719B5 /* KEArticleWebView.m */; };
+		4DDF74C11F01243A00A719B5 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74C01F01243A00A719B5 /* dist */; };
+		4DDF74C41F021D0700A719B5 /* KEArticleLandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74C31F021D0700A719B5 /* KEArticleLandscapeViewController.m */; };
+		4DDF74C71F021D5300A719B5 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF74C61F021D5300A719B5 /* UIImageViewAligned.m */; };
+		4DDF74C91F02360F00A719B5 /* landscape.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74C81F02360F00A719B5 /* landscape.html */; };
+		A134573453A4AF4E0E370D0A /* libPods-KonoContentKit-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */; };
+		CE7E1B3FA7D568FDE2FE9902 /* libPods-KonoContentKit-DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D8B22ED1EEFD3FD00B82050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D8B22CB1EEFD3FC00B82050 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D8B22D21EEFD3FC00B82050;
+			remoteInfo = "KonoContentKit-Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D2DF4421EF8D4EE002FD075 /* KonoContentKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KonoContentKit.framework; sourceTree = "<group>"; };
+		4D2DF4471EF8DC83002FD075 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4D34B9F71EFA1AD30063E2C0 /* KEArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleViewController.h; sourceTree = "<group>"; };
+		4D34B9F81EFA1AD30063E2C0 /* KEArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleViewController.m; sourceTree = "<group>"; };
+		4D34BA1F1EFA1BC50063E2C0 /* KEFatPageWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEFatPageWebView.h; sourceTree = "<group>"; };
+		4D34BA201EFA1BC50063E2C0 /* KEFatPageWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEFatPageWebView.m; sourceTree = "<group>"; };
+		4D34BA211EFA1BC50063E2C0 /* KEPageWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEPageWebView.h; sourceTree = "<group>"; };
+		4D34BA221EFA1BC50063E2C0 /* KEPageWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEPageWebView.m; sourceTree = "<group>"; };
+		4D34BA231EFA1BC50063E2C0 /* NESandwichView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NESandwichView.h; sourceTree = "<group>"; };
+		4D34BA241EFA1BC50063E2C0 /* NESandwichView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NESandwichView.m; sourceTree = "<group>"; };
+		4D34BA281EFA1D640063E2C0 /* KERotationPresentAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KERotationPresentAnimation.h; sourceTree = "<group>"; };
+		4D34BA291EFA1D640063E2C0 /* KERotationPresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KERotationPresentAnimation.m; sourceTree = "<group>"; };
+		4D8B22D31EEFD3FC00B82050 /* KonoContentKit-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KonoContentKit-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8B22D71EEFD3FC00B82050 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D8B22D91EEFD3FC00B82050 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4D8B22DA1EEFD3FC00B82050 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4D8B22E01EEFD3FC00B82050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D8B22E21EEFD3FC00B82050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D8B22E51EEFD3FC00B82050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D8B22E71EEFD3FC00B82050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D8B22EC1EEFD3FD00B82050 /* KonoContentKit-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KonoContentKit-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8B22F01EEFD3FD00B82050 /* KonoContentKit_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KonoContentKit_DemoTests.m; sourceTree = "<group>"; };
+		4D8B22F21EEFD3FD00B82050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D8B23001EF0F34B00B82050 /* KEShowcaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEShowcaseTableView.h; sourceTree = "<group>"; };
+		4D8B23011EF0F34B00B82050 /* KEShowcaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEShowcaseTableView.m; sourceTree = "<group>"; };
+		4D8B23031EF0F38500B82050 /* KEColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEColor.h; sourceTree = "<group>"; };
+		4D8B23041EF0F38500B82050 /* KEColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEColor.m; sourceTree = "<group>"; };
+		4D8B230C1EF0F43C00B82050 /* Kono-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kono-Prefix.pch"; sourceTree = "<group>"; };
+		4D8B230D1EF0FA1400B82050 /* KEBookLibraryTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryTitleViewController.h; sourceTree = "<group>"; };
+		4D8B230E1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryTitleViewController.m; sourceTree = "<group>"; };
+		4D8B23111EF114D300B82050 /* KELibraryTitleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KELibraryTitleHeaderView.h; sourceTree = "<group>"; };
+		4D8B23121EF114D300B82050 /* KELibraryTitleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KELibraryTitleHeaderView.m; sourceTree = "<group>"; };
+		4D8B23131EF114D300B82050 /* KELibraryTitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KELibraryTitleHeaderView.xib; sourceTree = "<group>"; };
+		4D8B23161EF114F800B82050 /* KELibraryBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KELibraryBookCell.h; sourceTree = "<group>"; };
+		4D8B23171EF114F800B82050 /* KELibraryBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KELibraryBookCell.m; sourceTree = "<group>"; };
+		4D8B23181EF114F800B82050 /* KELibraryBookCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KELibraryBookCell~ipad.xib"; sourceTree = "<group>"; };
+		4D8B23191EF114F800B82050 /* KELibraryBookCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KELibraryBookCell~iphone.xib"; sourceTree = "<group>"; };
+		4D8B23231EF11B0600B82050 /* KETextUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KETextUtil.h; sourceTree = "<group>"; };
+		4D8B23241EF11B0600B82050 /* KETextUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KETextUtil.m; sourceTree = "<group>"; };
+		4DDF74461EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryDetailPageInformationViewController.h; sourceTree = "<group>"; };
+		4DDF74471EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryDetailPageInformationViewController.m; sourceTree = "<group>"; };
+		4DDF74481EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEBookLibraryDetailPageInformationViewController.xib; sourceTree = "<group>"; };
+		4DDF74491EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryTOCPageViewController.h; sourceTree = "<group>"; };
+		4DDF744A1EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryTOCPageViewController.m; sourceTree = "<group>"; };
+		4DDF744C1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryHorizontalScrollCell.h; sourceTree = "<group>"; };
+		4DDF744D1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryHorizontalScrollCell.m; sourceTree = "<group>"; };
+		4DDF744E1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEBookLibraryHorizontalScrollCell.xib; sourceTree = "<group>"; };
+		4DDF744F1EFCCC7200A719B5 /* KEBookLibraryItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryItemCell.h; sourceTree = "<group>"; };
+		4DDF74501EFCCC7200A719B5 /* KEBookLibraryItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryItemCell.m; sourceTree = "<group>"; };
+		4DDF74511EFCCC7200A719B5 /* KEBookLibraryItemCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KEBookLibraryItemCell~ipad.xib"; sourceTree = "<group>"; };
+		4DDF74521EFCCC7200A719B5 /* KEBookLibraryItemCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KEBookLibraryItemCell~iphone.xib"; sourceTree = "<group>"; };
+		4DDF74531EFCCC7200A719B5 /* KEBookLibraryTOCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryTOCCell.h; sourceTree = "<group>"; };
+		4DDF74541EFCCC7200A719B5 /* KEBookLibraryTOCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryTOCCell.m; sourceTree = "<group>"; };
+		4DDF74551EFCCC7200A719B5 /* KEBookLibraryTOCCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KEBookLibraryTOCCell~ipad.xib"; sourceTree = "<group>"; };
+		4DDF74561EFCCC7200A719B5 /* KEBookLibraryTOCCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KEBookLibraryTOCCell~iphone.xib"; sourceTree = "<group>"; };
+		4DDF74571EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEBookLibraryTOCTableCell.h; sourceTree = "<group>"; };
+		4DDF74581EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEBookLibraryTOCTableCell.m; sourceTree = "<group>"; };
+		4DDF74591EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KEBookLibraryTOCTableCell~ipad.xib"; sourceTree = "<group>"; };
+		4DDF745A1EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "KEBookLibraryTOCTableCell~iphone.xib"; sourceTree = "<group>"; };
+		4DDF74691EFCCF7400A719B5 /* KEUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEUtil.h; sourceTree = "<group>"; };
+		4DDF746A1EFCCF7400A719B5 /* KEUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEUtil.m; sourceTree = "<group>"; };
+		4DDF746F1F00C56B00A719B5 /* KEArticleFitReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleFitReadingViewController.h; sourceTree = "<group>"; };
+		4DDF74701F00C56B00A719B5 /* KEArticleFitReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleFitReadingViewController.m; sourceTree = "<group>"; };
+		4DDF74731F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleSelectionMenuTableViewCell.h; sourceTree = "<group>"; };
+		4DDF74741F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleSelectionMenuTableViewCell.m; sourceTree = "<group>"; };
+		4DDF74751F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEArticleSelectionMenuTableViewCell.xib; sourceTree = "<group>"; };
+		4DDF74761F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleSelectionMenuViewController.h; sourceTree = "<group>"; };
+		4DDF74771F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleSelectionMenuViewController.m; sourceTree = "<group>"; };
+		4DDF74781F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEArticleSelectionMenuViewController.xib; sourceTree = "<group>"; };
+		4DDF747D1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleToolFontSizeViewController.h; sourceTree = "<group>"; };
+		4DDF747E1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleToolFontSizeViewController.m; sourceTree = "<group>"; };
+		4DDF747F1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEArticleToolFontSizeViewController.xib; sourceTree = "<group>"; };
+		4DDF74801F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleToolMenuFontTableViewCell.h; sourceTree = "<group>"; };
+		4DDF74811F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleToolMenuFontTableViewCell.m; sourceTree = "<group>"; };
+		4DDF74821F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEArticleToolMenuFontTableViewCell.xib; sourceTree = "<group>"; };
+		4DDF74871F00C78300A719B5 /* KEFitReadingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEFitReadingViewCell.h; sourceTree = "<group>"; };
+		4DDF74881F00C78300A719B5 /* KEFitReadingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEFitReadingViewCell.m; sourceTree = "<group>"; };
+		4DDF74891F00C78300A719B5 /* KEFitReadingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KEFitReadingViewCell.xib; sourceTree = "<group>"; };
+		4DDF748C1F00CD4C00A719B5 /* KEArticleWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleWebView.h; sourceTree = "<group>"; };
+		4DDF748D1F00CD4C00A719B5 /* KEArticleWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleWebView.m; sourceTree = "<group>"; };
+		4DDF74C01F01243A00A719B5 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		4DDF74C21F021D0700A719B5 /* KEArticleLandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEArticleLandscapeViewController.h; sourceTree = "<group>"; };
+		4DDF74C31F021D0700A719B5 /* KEArticleLandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEArticleLandscapeViewController.m; sourceTree = "<group>"; };
+		4DDF74C51F021D5300A719B5 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
+		4DDF74C61F021D5300A719B5 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
+		4DDF74C81F02360F00A719B5 /* landscape.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = landscape.html; sourceTree = "<group>"; };
+		86688B99A99157164054F79D /* Pods-KonoContentKit-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-Demo/Pods-KonoContentKit-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		96D4445E54060F6C316D04E1 /* Pods-KonoContentKit-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-DemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-DemoTests/Pods-KonoContentKit-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2FE35BE0EF8C67CA6184D03 /* Pods-KonoContentKit-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-Demo/Pods-KonoContentKit-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KonoContentKit-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KonoContentKit-DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC87393EEBA13224B3A6BDA7 /* Pods-KonoContentKit-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-DemoTests/Pods-KonoContentKit-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D8B22D01EEFD3FC00B82050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D34BA2B1EFB82530063E2C0 /* KonoContentKit.framework in Frameworks */,
+				4D2DF4481EF8DC83002FD075 /* libz.tbd in Frameworks */,
+				A134573453A4AF4E0E370D0A /* libPods-KonoContentKit-Demo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D8B22E91EEFD3FD00B82050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7E1B3FA7D568FDE2FE9902 /* libPods-KonoContentKit-DemoTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F47B4E59387D6A7E4AA16BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D2DF4471EF8DC83002FD075 /* libz.tbd */,
+				B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */,
+				D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D34BA1E1EFA1BC50063E2C0 /* Sandwich */ = {
+			isa = PBXGroup;
+			children = (
+				4D34BA1F1EFA1BC50063E2C0 /* KEFatPageWebView.h */,
+				4D34BA201EFA1BC50063E2C0 /* KEFatPageWebView.m */,
+				4D34BA211EFA1BC50063E2C0 /* KEPageWebView.h */,
+				4D34BA221EFA1BC50063E2C0 /* KEPageWebView.m */,
+				4D34BA231EFA1BC50063E2C0 /* NESandwichView.h */,
+				4D34BA241EFA1BC50063E2C0 /* NESandwichView.m */,
+			);
+			path = Sandwich;
+			sourceTree = "<group>";
+		};
+		4D8B22CA1EEFD3FC00B82050 = {
+			isa = PBXGroup;
+			children = (
+				4D8B22D51EEFD3FC00B82050 /* KonoContentKit-Demo */,
+				4D8B22EF1EEFD3FD00B82050 /* KonoContentKit-DemoTests */,
+				4D8B22D41EEFD3FC00B82050 /* Products */,
+				B9EC4D6E4030A800A85884CC /* Pods */,
+				0F47B4E59387D6A7E4AA16BB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4D8B22D41EEFD3FC00B82050 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B22D31EEFD3FC00B82050 /* KonoContentKit-Demo.app */,
+				4D8B22EC1EEFD3FD00B82050 /* KonoContentKit-DemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D8B22D51EEFD3FC00B82050 /* KonoContentKit-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4D2DF4421EF8D4EE002FD075 /* KonoContentKit.framework */,
+				4D8B22FE1EF0F27700B82050 /* Util */,
+				4D8B22FF1EF0F34B00B82050 /* BasicComponent */,
+				4D34BA1E1EFA1BC50063E2C0 /* Sandwich */,
+				4D8B22FB1EF0F25800B82050 /* Article */,
+				4DDF74451EFCCC7200A719B5 /* TOC */,
+				4D8B22FC1EF0F25800B82050 /* Issue List */,
+				4D8B22D91EEFD3FC00B82050 /* AppDelegate.h */,
+				4D8B22DA1EEFD3FC00B82050 /* AppDelegate.m */,
+				4D8B230C1EF0F43C00B82050 /* Kono-Prefix.pch */,
+				4D8B22DF1EEFD3FC00B82050 /* Main.storyboard */,
+				4D8B22E21EEFD3FC00B82050 /* Assets.xcassets */,
+				4D8B22E41EEFD3FC00B82050 /* LaunchScreen.storyboard */,
+				4D8B22E71EEFD3FC00B82050 /* Info.plist */,
+				4D8B22D61EEFD3FC00B82050 /* Supporting Files */,
+			);
+			path = "KonoContentKit-Demo";
+			sourceTree = "<group>";
+		};
+		4D8B22D61EEFD3FC00B82050 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B22D71EEFD3FC00B82050 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D8B22EF1EEFD3FD00B82050 /* KonoContentKit-DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B22F01EEFD3FD00B82050 /* KonoContentKit_DemoTests.m */,
+				4D8B22F21EEFD3FD00B82050 /* Info.plist */,
+			);
+			path = "KonoContentKit-DemoTests";
+			sourceTree = "<group>";
+		};
+		4D8B22FB1EF0F25800B82050 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF74C81F02360F00A719B5 /* landscape.html */,
+				4DDF74C01F01243A00A719B5 /* dist */,
+				4D34B9F71EFA1AD30063E2C0 /* KEArticleViewController.h */,
+				4D34B9F81EFA1AD30063E2C0 /* KEArticleViewController.m */,
+				4DDF746F1F00C56B00A719B5 /* KEArticleFitReadingViewController.h */,
+				4DDF74701F00C56B00A719B5 /* KEArticleFitReadingViewController.m */,
+				4DDF74C21F021D0700A719B5 /* KEArticleLandscapeViewController.h */,
+				4DDF74C31F021D0700A719B5 /* KEArticleLandscapeViewController.m */,
+				4DDF74721F00C58600A719B5 /* View */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		4D8B22FC1EF0F25800B82050 /* Issue List */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B23101EF114D300B82050 /* View */,
+				4D8B230D1EF0FA1400B82050 /* KEBookLibraryTitleViewController.h */,
+				4D8B230E1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m */,
+			);
+			path = "Issue List";
+			sourceTree = "<group>";
+		};
+		4D8B22FE1EF0F27700B82050 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF74691EFCCF7400A719B5 /* KEUtil.h */,
+				4DDF746A1EFCCF7400A719B5 /* KEUtil.m */,
+				4D8B23031EF0F38500B82050 /* KEColor.h */,
+				4D8B23041EF0F38500B82050 /* KEColor.m */,
+				4D8B23231EF11B0600B82050 /* KETextUtil.h */,
+				4D8B23241EF11B0600B82050 /* KETextUtil.m */,
+				4D34BA281EFA1D640063E2C0 /* KERotationPresentAnimation.h */,
+				4D34BA291EFA1D640063E2C0 /* KERotationPresentAnimation.m */,
+				4DDF74C51F021D5300A719B5 /* UIImageViewAligned.h */,
+				4DDF74C61F021D5300A719B5 /* UIImageViewAligned.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4D8B22FF1EF0F34B00B82050 /* BasicComponent */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B23001EF0F34B00B82050 /* KEShowcaseTableView.h */,
+				4D8B23011EF0F34B00B82050 /* KEShowcaseTableView.m */,
+			);
+			path = BasicComponent;
+			sourceTree = "<group>";
+		};
+		4D8B23101EF114D300B82050 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D8B23161EF114F800B82050 /* KELibraryBookCell.h */,
+				4D8B23171EF114F800B82050 /* KELibraryBookCell.m */,
+				4D8B23181EF114F800B82050 /* KELibraryBookCell~ipad.xib */,
+				4D8B23191EF114F800B82050 /* KELibraryBookCell~iphone.xib */,
+				4D8B23111EF114D300B82050 /* KELibraryTitleHeaderView.h */,
+				4D8B23121EF114D300B82050 /* KELibraryTitleHeaderView.m */,
+				4D8B23131EF114D300B82050 /* KELibraryTitleHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4DDF74451EFCCC7200A719B5 /* TOC */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF74461EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.h */,
+				4DDF74471EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m */,
+				4DDF74481EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.xib */,
+				4DDF74491EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.h */,
+				4DDF744A1EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.m */,
+				4DDF744B1EFCCC7200A719B5 /* View */,
+			);
+			path = TOC;
+			sourceTree = "<group>";
+		};
+		4DDF744B1EFCCC7200A719B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF744C1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.h */,
+				4DDF744D1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.m */,
+				4DDF744E1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.xib */,
+				4DDF744F1EFCCC7200A719B5 /* KEBookLibraryItemCell.h */,
+				4DDF74501EFCCC7200A719B5 /* KEBookLibraryItemCell.m */,
+				4DDF74511EFCCC7200A719B5 /* KEBookLibraryItemCell~ipad.xib */,
+				4DDF74521EFCCC7200A719B5 /* KEBookLibraryItemCell~iphone.xib */,
+				4DDF74531EFCCC7200A719B5 /* KEBookLibraryTOCCell.h */,
+				4DDF74541EFCCC7200A719B5 /* KEBookLibraryTOCCell.m */,
+				4DDF74551EFCCC7200A719B5 /* KEBookLibraryTOCCell~ipad.xib */,
+				4DDF74561EFCCC7200A719B5 /* KEBookLibraryTOCCell~iphone.xib */,
+				4DDF74571EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.h */,
+				4DDF74581EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.m */,
+				4DDF74591EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~ipad.xib */,
+				4DDF745A1EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~iphone.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4DDF74721F00C58600A719B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF747D1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.h */,
+				4DDF747E1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.m */,
+				4DDF747F1F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.xib */,
+				4DDF74801F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.h */,
+				4DDF74811F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.m */,
+				4DDF74821F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.xib */,
+				4DDF74731F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.h */,
+				4DDF74741F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.m */,
+				4DDF74751F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.xib */,
+				4DDF74761F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.h */,
+				4DDF74771F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.m */,
+				4DDF74781F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.xib */,
+				4DDF74871F00C78300A719B5 /* KEFitReadingViewCell.h */,
+				4DDF74881F00C78300A719B5 /* KEFitReadingViewCell.m */,
+				4DDF74891F00C78300A719B5 /* KEFitReadingViewCell.xib */,
+				4DDF748C1F00CD4C00A719B5 /* KEArticleWebView.h */,
+				4DDF748D1F00CD4C00A719B5 /* KEArticleWebView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9EC4D6E4030A800A85884CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2FE35BE0EF8C67CA6184D03 /* Pods-KonoContentKit-Demo.debug.xcconfig */,
+				86688B99A99157164054F79D /* Pods-KonoContentKit-Demo.release.xcconfig */,
+				96D4445E54060F6C316D04E1 /* Pods-KonoContentKit-DemoTests.debug.xcconfig */,
+				FC87393EEBA13224B3A6BDA7 /* Pods-KonoContentKit-DemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D8B22D21EEFD3FC00B82050 /* KonoContentKit-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D8B22F51EEFD3FD00B82050 /* Build configuration list for PBXNativeTarget "KonoContentKit-Demo" */;
+			buildPhases = (
+				0063992C5C3BAA9146896366 /* [CP] Check Pods Manifest.lock */,
+				4D8B22CF1EEFD3FC00B82050 /* Sources */,
+				4D8B22D01EEFD3FC00B82050 /* Frameworks */,
+				4D8B22D11EEFD3FC00B82050 /* Resources */,
+				2F6CD4654EF9FD8732B52637 /* [CP] Embed Pods Frameworks */,
+				94DEB70E3D0FA1ADE83D610A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KonoContentKit-Demo";
+			productName = "KonoContentKit-Demo";
+			productReference = 4D8B22D31EEFD3FC00B82050 /* KonoContentKit-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D8B22EB1EEFD3FD00B82050 /* KonoContentKit-DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D8B22F81EEFD3FD00B82050 /* Build configuration list for PBXNativeTarget "KonoContentKit-DemoTests" */;
+			buildPhases = (
+				A50756A554A3D4842383013E /* [CP] Check Pods Manifest.lock */,
+				4D8B22E81EEFD3FD00B82050 /* Sources */,
+				4D8B22E91EEFD3FD00B82050 /* Frameworks */,
+				4D8B22EA1EEFD3FD00B82050 /* Resources */,
+				7ADAE7C4BD6D2D46CB634C94 /* [CP] Embed Pods Frameworks */,
+				7C610744340EFE2B90F139F7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D8B22EE1EEFD3FD00B82050 /* PBXTargetDependency */,
+			);
+			name = "KonoContentKit-DemoTests";
+			productName = "KonoContentKit-DemoTests";
+			productReference = 4D8B22EC1EEFD3FD00B82050 /* KonoContentKit-DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D8B22CB1EEFD3FC00B82050 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = kono;
+				TargetAttributes = {
+					4D8B22D21EEFD3FC00B82050 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = KSFL9L3S98;
+						ProvisioningStyle = Automatic;
+					};
+					4D8B22EB1EEFD3FD00B82050 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = KSFL9L3S98;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4D8B22D21EEFD3FC00B82050;
+					};
+				};
+			};
+			buildConfigurationList = 4D8B22CE1EEFD3FC00B82050 /* Build configuration list for PBXProject "KonoContentKit-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D8B22CA1EEFD3FC00B82050;
+			productRefGroup = 4D8B22D41EEFD3FC00B82050 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D8B22D21EEFD3FC00B82050 /* KonoContentKit-Demo */,
+				4D8B22EB1EEFD3FD00B82050 /* KonoContentKit-DemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D8B22D11EEFD3FC00B82050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DDF748B1F00C78300A719B5 /* KEFitReadingViewCell.xib in Resources */,
+				4DDF747A1F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.xib in Resources */,
+				4D8B23151EF114D300B82050 /* KELibraryTitleHeaderView.xib in Resources */,
+				4DDF74841F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.xib in Resources */,
+				4DDF745C1EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.xib in Resources */,
+				4DDF74621EFCCC7200A719B5 /* KEBookLibraryItemCell~iphone.xib in Resources */,
+				4DDF74681EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~iphone.xib in Resources */,
+				4DDF745F1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.xib in Resources */,
+				4DDF74671EFCCC7200A719B5 /* KEBookLibraryTOCTableCell~ipad.xib in Resources */,
+				4DDF747C1F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.xib in Resources */,
+				4DDF74641EFCCC7200A719B5 /* KEBookLibraryTOCCell~ipad.xib in Resources */,
+				4DDF74611EFCCC7200A719B5 /* KEBookLibraryItemCell~ipad.xib in Resources */,
+				4DDF74C11F01243A00A719B5 /* dist in Resources */,
+				4D8B22E61EEFD3FC00B82050 /* LaunchScreen.storyboard in Resources */,
+				4D8B22E31EEFD3FC00B82050 /* Assets.xcassets in Resources */,
+				4D8B22E11EEFD3FC00B82050 /* Main.storyboard in Resources */,
+				4D8B231C1EF114F800B82050 /* KELibraryBookCell~iphone.xib in Resources */,
+				4DDF74651EFCCC7200A719B5 /* KEBookLibraryTOCCell~iphone.xib in Resources */,
+				4DDF74861F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.xib in Resources */,
+				4D8B231B1EF114F800B82050 /* KELibraryBookCell~ipad.xib in Resources */,
+				4DDF74C91F02360F00A719B5 /* landscape.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D8B22EA1EEFD3FD00B82050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0063992C5C3BAA9146896366 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F6CD4654EF9FD8732B52637 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KonoContentKit-Demo/Pods-KonoContentKit-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ADAE7C4BD6D2D46CB634C94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KonoContentKit-DemoTests/Pods-KonoContentKit-DemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C610744340EFE2B90F139F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KonoContentKit-DemoTests/Pods-KonoContentKit-DemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94DEB70E3D0FA1ADE83D610A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KonoContentKit-Demo/Pods-KonoContentKit-Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A50756A554A3D4842383013E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D8B22CF1EEFD3FC00B82050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DDF74791F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.m in Sources */,
+				4D34BA251EFA1BC50063E2C0 /* KEFatPageWebView.m in Sources */,
+				4DDF74711F00C56B00A719B5 /* KEArticleFitReadingViewController.m in Sources */,
+				4DDF74C41F021D0700A719B5 /* KEArticleLandscapeViewController.m in Sources */,
+				4D8B23251EF11B0600B82050 /* KETextUtil.m in Sources */,
+				4DDF745B1EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m in Sources */,
+				4DDF746B1EFCCF7400A719B5 /* KEUtil.m in Sources */,
+				4DDF745E1EFCCC7200A719B5 /* KEBookLibraryHorizontalScrollCell.m in Sources */,
+				4D34BA261EFA1BC50063E2C0 /* KEPageWebView.m in Sources */,
+				4D8B23071EF0F38500B82050 /* KEColor.m in Sources */,
+				4D8B231A1EF114F800B82050 /* KELibraryBookCell.m in Sources */,
+				4D8B23021EF0F34B00B82050 /* KEShowcaseTableView.m in Sources */,
+				4DDF748A1F00C78300A719B5 /* KEFitReadingViewCell.m in Sources */,
+				4D8B23141EF114D300B82050 /* KELibraryTitleHeaderView.m in Sources */,
+				4DDF74C71F021D5300A719B5 /* UIImageViewAligned.m in Sources */,
+				4DDF74601EFCCC7200A719B5 /* KEBookLibraryItemCell.m in Sources */,
+				4DDF74631EFCCC7200A719B5 /* KEBookLibraryTOCCell.m in Sources */,
+				4DDF745D1EFCCC7200A719B5 /* KEBookLibraryTOCPageViewController.m in Sources */,
+				4DDF748E1F00CD4C00A719B5 /* KEArticleWebView.m in Sources */,
+				4DDF74661EFCCC7200A719B5 /* KEBookLibraryTOCTableCell.m in Sources */,
+				4D8B22DB1EEFD3FC00B82050 /* AppDelegate.m in Sources */,
+				4D8B230F1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m in Sources */,
+				4DDF74851F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.m in Sources */,
+				4D8B22D81EEFD3FC00B82050 /* main.m in Sources */,
+				4DDF74831F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.m in Sources */,
+				4D34B9F91EFA1AD30063E2C0 /* KEArticleViewController.m in Sources */,
+				4D34BA271EFA1BC50063E2C0 /* NESandwichView.m in Sources */,
+				4D34BA2A1EFA1D640063E2C0 /* KERotationPresentAnimation.m in Sources */,
+				4DDF747B1F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D8B22E81EEFD3FD00B82050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D8B22F11EEFD3FD00B82050 /* KonoContentKit_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D8B22EE1EEFD3FD00B82050 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D8B22D21EEFD3FC00B82050 /* KonoContentKit-Demo */;
+			targetProxy = 4D8B22ED1EEFD3FD00B82050 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D8B22DF1EEFD3FC00B82050 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D8B22E01EEFD3FC00B82050 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D8B22E41EEFD3FC00B82050 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D8B22E51EEFD3FC00B82050 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D8B22F31EEFD3FD00B82050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D8B22F41EEFD3FD00B82050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D8B22F61EEFD3FD00B82050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FE35BE0EF8C67CA6184D03 /* Pods-KonoContentKit-Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KSFL9L3S98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KonoContentKit-Demo",
+				);
+				GCC_PREFIX_HEADER = "KonoContentKit-Demo/Kono-Prefix.pch";
+				INFOPLIST_FILE = "KonoContentKit-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thekono.KonoContentKit-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4D8B22F71EEFD3FD00B82050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86688B99A99157164054F79D /* Pods-KonoContentKit-Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KSFL9L3S98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KonoContentKit-Demo",
+				);
+				GCC_PREFIX_HEADER = "KonoContentKit-Demo/Kono-Prefix.pch";
+				INFOPLIST_FILE = "KonoContentKit-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thekono.KonoContentKit-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4D8B22F91EEFD3FD00B82050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96D4445E54060F6C316D04E1 /* Pods-KonoContentKit-DemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KSFL9L3S98;
+				INFOPLIST_FILE = "KonoContentKit-DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thekono.KonoContentKit-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KonoContentKit-Demo.app/KonoContentKit-Demo";
+			};
+			name = Debug;
+		};
+		4D8B22FA1EEFD3FD00B82050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC87393EEBA13224B3A6BDA7 /* Pods-KonoContentKit-DemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KSFL9L3S98;
+				INFOPLIST_FILE = "KonoContentKit-DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thekono.KonoContentKit-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KonoContentKit-Demo.app/KonoContentKit-Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D8B22CE1EEFD3FC00B82050 /* Build configuration list for PBXProject "KonoContentKit-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8B22F31EEFD3FD00B82050 /* Debug */,
+				4D8B22F41EEFD3FD00B82050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D8B22F51EEFD3FD00B82050 /* Build configuration list for PBXNativeTarget "KonoContentKit-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8B22F61EEFD3FD00B82050 /* Debug */,
+				4D8B22F71EEFD3FD00B82050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D8B22F81EEFD3FD00B82050 /* Build configuration list for PBXNativeTarget "KonoContentKit-DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D8B22F91EEFD3FD00B82050 /* Debug */,
+				4D8B22FA1EEFD3FD00B82050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D8B22CB1EEFD3FC00B82050 /* Project object */;
+}

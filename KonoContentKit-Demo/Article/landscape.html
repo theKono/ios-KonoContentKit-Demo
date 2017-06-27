@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=4, minimum-scale=1">
+            <style>html,body{height:100%;overflow:hidden;}body{margin:0;background-color:#232323 }#iso-page{width:50%;height:100%;margin:0 auto;display:none}#iso-td{display:table-cell;width:100%;height:100%;vertical-align:middle}#iso-img,#iso-iframe{display:block;margin:0 auto}#main-table{height:100%;border-spacing:0;display:none;table-layout:fixed;}iframe{border:0;width:0;height:0}td{padding:0;position:relative;vertical-align:middle}#left-disable,#right-disable{position:absolute;top:0;left:0;background-color:rgba(0,0,0,0.8);display:none}#both-disable{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);display:none;z-index:10}#both-disable-links{width:40%;height:135px;margin:0 auto;position:relative}#both-disable-referral{width:100%;font-size:18px;padding:15px 0;text-align:center;background-color:#8fc31f ;color:white;display:block;position:absolute;top:0;left:0;text-decoration:none}#both-disable-purchase{width:100%;font-size:18px;padding:15px 0;text-align:center;background-color:#8fc31f ;color:white;display:block;position:absolute;bottom:0;left:0;text-decoration:none}#left-disable-links,#right-disable-links{width:60%;height:140px;margin:0 auto;position:relative}#left-disable-referral,#right-disable-referral{width:100%;font-size:18px;padding:15px 0;text-align:center;background-color:#8fc31f ;color:white;display:block;position:absolute;top:0;left:0;text-decoration:none}#left-disable-purchase,#right-disable-purchase{width:100%;font-size:18px;padding:15px 0;text-align:center;background-color:#8fc31f ;color:white;display:block;position:absolute;bottom:0;left:0;text-decoration:none}#left-img,#right-img{display:block}</style>
+    </head>
+    <body>
+        <div id='both-disable'>
+            <div id="both-disable-links">
+                <a id='both-disable-referral' href="kono://referral">$REFERRAL</a>
+                <a id='both-disable-purchase' href="kono://purchase">$PURCHASE</a>
+            </div>
+        </div>
+        <div id='iso-page'>
+            <div id='iso-td'>
+                <iframe id='iso-iframe' scrolling='no'></iframe>
+                <img id='iso-img'>
+            </div>
+        </div>
+        <table id='main-table'>
+            <tr id='main-tr'>
+                <td id='left-td' align='right'>
+                    <div id='left-disable'>
+                        <div id="left-disable-links">
+                            <a id='left-disable-referral' href="kono://referral">$REFERRAL</a>
+                            <a id='left-disable-purchase' href="kono://purchase">$PURCHASE</a>
+                        </div>
+                    </div>
+                    <iframe id='left-iframe' scrolling='no'></iframe>
+                    <img id='left-img'>
+                </td>
+                <td id='right-td' align='left'>
+                    <div id="right-disable">
+                        <div id="right-disable-links">
+                            <a id='right-disable-referral' href="kono://referral">$REFERRAL</a>
+                            <a id='right-disable-purchase' href="kono://purchase">$PURCHASE</a>
+                        </div>
+                    </div>
+                    <iframe id='right-iframe' scrolling='no'></iframe>
+                    <img id='right-img'>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <script>/*<![CDATA[*/var LEFT_PAGE="$LEFT_PAGE";var LEFT_PAGE_RATIO="$RATIO_LEFT";var LEFT_PAGE_DISABLE=$DISABLE_LEFT_PAGE;var RIGHT_PAGE="$RIGHT_PAGE";var RIGHT_PAGE_RATIO="$RATIO_RIGHT";var RIGHT_PAGE_DISABLE=$DISABLE_RIGHT_PAGE;var ISO_PAGE="$ISO_PAGE";var ISO_PAGE_RATIO="$RATIO_ISO";var ISO_PAGE_DISABLE=$DISABLE_ISO_PAGE;var ISO_PAGE_ON=$ENABLE_ISO_PAGE;var leftLinks=document.getElementById("left-disable-links");var rightLinks=document.getElementById("right-disable-links");var bothLinks=document.getElementById("both-disable-links");var leftIframe=document.getElementById("left-iframe");var rightIframe=document.getElementById("right-iframe");var isoIframe=document.getElementById("iso-iframe");var leftImg=document.getElementById("left-img");var rightImg=document.getElementById("right-img");var isoImg=document.getElementById("iso-img");var leftDisable=document.getElementById("left-disable");var rightDisable=document.getElementById("right-disable");var bothDisable=document.getElementById("both-disable");var td=document.getElementById("left-td");var tdRatio=td.clientHeight/td.clientWidth;var containerWidth=screen.height/2;var containerHeight=screen.width;var containerRatio=containerHeight/containerWidth;var isDynamicInnerWidth;var screenHeight=screen.width; var screenWidth=screen.height;if(screen.height>window.innerWidth){isDynamicInnerWidth=true;}else{isDynamicInnerWidth=false;}if(!isDynamicInnerWidth){screenHeight=window.innerHeight;screenWidth=window.innerWidth;containerWidth=screenWidth/2;containerHeight=screenHeight;containerRatio=containerHeight/containerWidth;} if(screenWidth%2==1){document.getElementById("main-table").style.width=(screenWidth-1)+"px";containerWidth=(screenWidth-1)/2;containerHeight=screenHeight;containerRatio=containerHeight/containerWidth}else{document.getElementById("main-table").style.width=screenWidth+"px"}alterDisable(leftDisable);alterDisable(rightDisable);setOnload(leftImg);setOnload(rightImg);setOnload(isoImg);if(!!ISO_PAGE_ON){if(!ISO_PAGE_DISABLE){alterIframe(isoIframe,ISO_PAGE_RATIO)}document.getElementById("iso-td").style.width=containerWidth+"px";document.getElementById("iso-td").style.height=containerHeight+"px";document.getElementById("iso-page").style.display="block"}else{document.getElementById("main-table").style.display="table";if(!LEFT_PAGE_DISABLE){alterIframe(leftIframe,LEFT_PAGE_RATIO)}if(!RIGHT_PAGE_DISABLE){alterIframe(rightIframe,RIGHT_PAGE_RATIO)}}setDisable();setSrc();function alterDisable(a){a.style.width=containerWidth+"px";a.style.height=containerHeight+"px"}function setOnload(a){a.onload=function(){alterIframe(a,(a.height*100)/a.width)}}function alterIframe(a,c){var b=parseFloat(c)/100;if(b>=containerRatio){a.style.height=containerHeight+"px";a.style.width=Math.floor(containerHeight/b)+"px"}else{a.style.width=containerWidth+"px";a.style.height=containerWidth*b+"px"}}function setSrc(){if(!!ISO_PAGE_ON){if(!ISO_PAGE_DISABLE){isoIframe.src=ISO_PAGE}else{isoImg.src=ISO_PAGE}}else{if(!LEFT_PAGE_DISABLE){leftIframe.src=LEFT_PAGE}else{leftImg.src=LEFT_PAGE}if(!RIGHT_PAGE_DISABLE){rightIframe.src=RIGHT_PAGE}else{rightImg.src=RIGHT_PAGE}}}function setDisable(){var a="block";if((!ISO_PAGE_ON&&LEFT_PAGE_DISABLE&&RIGHT_PAGE_DISABLE)||(!!ISO_PAGE_ON&&ISO_PAGE_DISABLE)){bothDisable.style.display=a}else{if(!ISO_PAGE_ON){if(LEFT_PAGE_DISABLE){leftDisable.style.display=a}if(RIGHT_PAGE_DISABLE){rightDisable.style.display=a}}}alterLinks(leftLinks);alterLinks(rightLinks);alterLinks(bothLinks)}function alterLinks(a){a.style.marginTop=((containerHeight-a.clientHeight)/2)+"px"};document.getElementById('main-table').style.height=(containerHeight+1)+'px';/*]]>*/</script>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3mc-5l-iwO" customClass="KEBookLibraryItemCell">
+            <rect key="frame" x="0.0" y="0.0" width="141" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="141" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_issue_list_book" translatesAutoresizingMaskIntoConstraints="NO" id="UnE-SA-6Qh" userLabel="backgroundView">
+                        <rect key="frame" x="0.0" y="6" width="141" height="188"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="141" id="Tic-uL-5To"/>
+                            <constraint firstAttribute="height" constant="188" id="oZU-MK-5Id"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyA-qT-uto">
+                        <rect key="frame" x="3" y="0.0" width="135" height="3"/>
+                        <color key="backgroundColor" red="0.37254901959999998" green="0.58431372550000005" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="434-fa-n5l"/>
+                            <constraint firstAttribute="height" constant="3" id="uWm-i2-Xw0"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0m7-cZ-6LP">
+                        <rect key="frame" x="3" y="9" width="135" height="180"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="180" id="BK4-y4-PML"/>
+                            <constraint firstAttribute="width" constant="135" id="RvZ-SS-BUv"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="HyA-qT-uto" firstAttribute="top" secondItem="3mc-5l-iwO" secondAttribute="top" id="3EY-pr-lv0"/>
+                <constraint firstItem="HyA-qT-uto" firstAttribute="centerX" secondItem="3mc-5l-iwO" secondAttribute="centerX" id="AHF-XO-Hqj"/>
+                <constraint firstItem="UnE-SA-6Qh" firstAttribute="top" secondItem="3mc-5l-iwO" secondAttribute="top" constant="6" id="NOO-8y-ny3"/>
+                <constraint firstItem="UnE-SA-6Qh" firstAttribute="leading" secondItem="3mc-5l-iwO" secondAttribute="leading" id="Tcn-4Z-CFB"/>
+                <constraint firstItem="0m7-cZ-6LP" firstAttribute="centerX" secondItem="UnE-SA-6Qh" secondAttribute="centerX" id="Wq3-fg-jf6"/>
+                <constraint firstItem="0m7-cZ-6LP" firstAttribute="top" secondItem="UnE-SA-6Qh" secondAttribute="top" constant="3" id="XUk-Mv-D7v"/>
+            </constraints>
+            <size key="customSize" width="567" height="485"/>
+            <connections>
+                <outlet property="currentPageIndicator" destination="HyA-qT-uto" id="PyZ-Nk-Lys"/>
+                <outlet property="itemBackgroundView" destination="UnE-SA-6Qh" id="iG9-4u-kGl"/>
+                <outlet property="itemImage" destination="0m7-cZ-6LP" id="Dzt-XE-WeJ"/>
+            </connections>
+            <point key="canvasLocation" x="114" y="139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="background_issue_list_book" width="142" height="240"/>
+    </resources>
+</document>

@@ -50,19 +50,7 @@ typedef enum KEArticleReadMode : NSInteger{
 
 @property (nonatomic)           BOOL                isNeedShowFlipIndicator;
 
-@property (nonatomic)           NSInteger           limitPreloadDoneNum;
-
-@property (nonatomic)           NSInteger           targetPreloadIndex;
-
-@property (nonatomic)           NSInteger           preloadCompleteNum;
-
-@property (nonatomic, strong)   NSMutableArray     *preloadCompleteMarkArray;
-
 @property (nonatomic, strong)   NSArray            *previousTrackingArticleArray;
-
-@property (readwrite, strong)   NSOperationQueue   *preloadQueue;
-
-@property (nonatomic)           KEPDFPreloadStatusCode  preloadStatus;
 
 @property (nonatomic, strong)   WYPopoverController *popoverController;
 

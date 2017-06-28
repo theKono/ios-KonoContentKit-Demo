@@ -143,10 +143,6 @@
         if( self.webViewLoadCompleteBlock != nil ){
             self.webViewLoadCompleteBlock();
             
-            if([self.delegate respondsToSelector:@selector(articleLoadingComplete:)]){
-                [self.delegate articleLoadingComplete:self.articleItem];
-            }
-            
             self.webViewLoadCompleteBlock = nil;
         }
         

@@ -2,8 +2,8 @@
 //  KEArticleFitReadingViewController.m
 //  Kono
 //
-//  Created by Kono on 2016/7/5.
-//  Copyright © 2016年 Kono. All rights reserved.
+//  Created by Kono on 2017/6/25.
+//  Copyright © 2017年 Kono. All rights reserved.
 //
 
 #import "KEArticleFitReadingViewController.h"

@@ -13,17 +13,7 @@
 
 @protocol KEFitReadingArticleCellDelegate <NSObject>
 
-- (void)openRelatedArticle:(NSString*)articleID;
-
-- (void)purchaseBtnPressed;
-
-- (void)referralBtnPressed;
-
-- (void)registerBtnPressed;
-
 - (void)adjustFontSizeWithRealTime:(KEFitReadingViewCell *)cell withRealTimeAction:(BOOL)isRealTimeAdjustment;
-
-- (void)articleLoadingComplete:(KCBookArticle *)articleItem;
 
 @end
 

@@ -13,18 +13,10 @@
 #import "KEColor.h"
 #import "KERotationPresentAnimation.h"
 #import <MBProgressHUD.h>
-
 #import <MZFormSheetController.h>
 
-static NSString* KE_UPGRADE_BLOCK_REASON_NEEDVERIFY = @"NOTVERIFY";
-
-#define ALERT_OFFSET_VERIFY_EMAIL 1001
-#define ALERT_OFFSET_AGE_CONFIRMATION  1002
-#define ALERT_OFFSET_MAGAZINE_BUNDLE_UPDATE  1003
-#define ALERT_OFFSET_MAGAZINE_CACHE_UPDATE  1004
 
 @interface KEArticleViewController ()
-@property (nonatomic) NSString *tempFilePath;
 
 @end
 
@@ -125,9 +117,6 @@ static NSString* KE_UPGRADE_BLOCK_REASON_NEEDVERIFY = @"NOTVERIFY";
     self.articlePDFView.dataSource = self;
     self.articlePDFView.delegate = self;
     
-    self.preloadStatus = KEPDFPreloadStatusCodeUnknown;
-    self.limitPreloadDoneNum = 0;
-    
     self.isFlipAnimationDone = NO;
     self.isNeedShowFlipIndicator = NO;
     
@@ -159,7 +148,6 @@ static NSString* KE_UPGRADE_BLOCK_REASON_NEEDVERIFY = @"NOTVERIFY";
 - (void)cleanUpArticleViewer{
     
     [self.tocBtn setUserInteractionEnabled:NO];
-    [self.preloadQueue cancelAllOperations];
     [self unregisterNotification];
     [self.articlePDFView cleanView];
     
@@ -662,29 +650,6 @@ static NSString* KE_UPGRADE_BLOCK_REASON_NEEDVERIFY = @"NOTVERIFY";
 
     }
     
-}
-
-
-# pragma mark - preload mechanism function
-
-- (NSInteger)getNextPreloadIdx:(NSInteger)currentIdx{
-    
-    NSInteger nextPreloadIdx = MIN( currentIdx, [self.preloadCompleteMarkArray count] - 1);
-    NSInteger preloadCompleteNum = 0;
-    
-    while( 1 == [[self.preloadCompleteMarkArray objectAtIndex:nextPreloadIdx] integerValue] ){
-        nextPreloadIdx ++;
-        preloadCompleteNum ++;
-        
-        if( preloadCompleteNum >= [self.preloadCompleteMarkArray count] ){
-            nextPreloadIdx = -1;
-            break;
-        }
-        if( nextPreloadIdx >= [self.preloadCompleteMarkArray count]){
-            nextPreloadIdx = 0;
-        }
-    }
-    return nextPreloadIdx;
 }
 
 #pragma mark - sandwich view datasource

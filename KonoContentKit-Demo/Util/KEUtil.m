@@ -214,16 +214,26 @@
     else{
         customizeLandscapeFile = [[customizeLandscapeFile stringByReplacingOccurrencesOfString:@"$ENABLE_ISO_PAGE" withString:@"false"] mutableCopy];
     }
-    
-    NSString *docsFolder = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:magazineBid];
+    NSError *error;
+    NSString *docsFolder = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"Caches/tmpBooks/%@", magazineBid]];
     
     NSString *leftPageNumber = [[[leftFilePath stringByDeletingLastPathComponent] componentsSeparatedByString:@"/"] lastObject] ;
     NSString *rightPageNumber = [[[rightFilePath stringByDeletingLastPathComponent] componentsSeparatedByString:@"/"] lastObject] ;
     
+    if ([[NSFileManager defaultManager] fileExistsAtPath:docsFolder] == NO) {
+        [[NSFileManager defaultManager] createDirectoryAtURL:[NSURL fileURLWithPath:docsFolder] withIntermediateDirectories:NO attributes:nil error:&error];
+        
+        if (error) {
+            NSLog(@"[Landscape file Directory] %@", [error description]);
+            return nil;
+        }
+    }
+    
+    
     landscapeFilePath = [docsFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_%@.html",leftPageNumber,rightPageNumber]];
     
     // save the NSString that contains the HTML to a file
-    NSError *error;
+    
     [customizeLandscapeFile writeToFile:landscapeFilePath atomically:NO encoding:NSUTF8StringEncoding error:&error];
     
     return landscapeFilePath;

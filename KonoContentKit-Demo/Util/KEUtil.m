@@ -117,6 +117,43 @@
 
 @implementation KEUtil
 
+#pragma mark - ViewController operating function
+
++ (UIViewController *)getCurrentViewController {
+    UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while (vc.presentedViewController) {
+        vc = vc.presentedViewController;
+        
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            vc = [(UINavigationController *)vc visibleViewController];
+        } else if ([vc isKindOfClass:[UITabBarController class]]) {
+            vc = [(UITabBarController *)vc selectedViewController];
+        }
+    }
+    return vc;
+}
+
+
++ (void)popToNavigationController:(UINavigationController *)rootNavigationController completion:(void (^)(void))completionBlock {
+    
+    UINavigationController *currentNavigationController = [self getCurrentViewController].navigationController;
+    
+    if ( rootNavigationController != currentNavigationController ) {
+        
+        [currentNavigationController dismissViewControllerAnimated:NO completion:^{
+            
+            [self popToNavigationController:rootNavigationController completion:completionBlock];
+            
+        }];
+        
+    }
+    else {
+        completionBlock();
+    }
+    
+}
+
 #pragma mark - alert or toast util function
 
 + (void)showGlobalAlert:(NSString *)msg {
@@ -131,6 +168,7 @@
     [alertView show];
     
 }
+
 #pragma mark - file related 
 
 + (NSString *)getPDFPageRatio:(NSString *)htmlFilePath {

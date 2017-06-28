@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "KEArticleLandscapeViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,25 @@
     
     return YES;
 }
+
+#pragma mark - appdelegate function - orientation
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application
+  supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
+    UIViewController *currentVC = [KEUtil getCurrentViewController];
+    
+    //We make the landscape viewcontroller, and all the viewcontroller linked by landscape viewcontroller can rotate
+    if( [currentVC isKindOfClass:[KEArticleLandscapeViewController class]] ||
+       [[self.window.rootViewController presentedViewController]
+        isKindOfClass:[KEArticleLandscapeViewController class]] ){
+           return UIInterfaceOrientationMaskAllButUpsideDown;
+       }
+    
+    
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

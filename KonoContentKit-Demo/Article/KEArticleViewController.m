@@ -2,8 +2,8 @@
 //  KEArticleViewController.m
 //  Kono
 //
-//  Created by Kono on 2016/6/20.
-//  Copyright © 2016年 Kono. All rights reserved.
+//  Created by Kono on 2017/6/20.
+//  Copyright © 2017年 Kono. All rights reserved.
 //
 
 #import "KEArticleViewController.h"
@@ -729,7 +729,7 @@ static NSString* KE_UPGRADE_BLOCK_REASON_NEEDVERIFY = @"NOTVERIFY";
     
     [[KCService contentManager] getPageHTMLForBookPage:page progress:nil complete:^(NSString *bundleFilePath) {
         
-        [self.articlePDFView reloadPageAtIndex:magazinePageIdx];
+        [self.articlePDFView reloadPageAtIndex:index];
         
     }fail:^(NSError *error) {
         NSLog(@"download HTML file failed:%@",error);

@@ -21,11 +21,9 @@
     
     KCService *contentManager = [KCService contentManager];
     [contentManager initializeApiURL:PROD_SERVER];
-    [contentManager initializeBundleDecryptSecret:@"But when you call me baby I know I'm not the only one"];
-    [contentManager initializeHTMLDecryptSecret:@"My anaconda don't want none unless you got bunz"];
-    [contentManager loginTestingUser:^{
-        
-    }];
+    [contentManager initializeHTMLDecryptSecret:@"aaa"];
+    [contentManager initializeBundleDecryptSecret:@"aaa"];
+    
     
     return YES;
 }

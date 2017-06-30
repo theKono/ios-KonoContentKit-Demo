@@ -32,6 +32,7 @@
 #import <Masonry.h>
 #import <KonoContentKit/KonoContentKit.h>
 
-#define KonoContentKitDemoMagazine @"cw"
+#define KonoContentKitDemoMagazine @"fujingaho"
 
-#define PROD_SERVER @"https://api.thekono.com/KPI2/"
+#define PROD_SERVER @"http://api-sandbox.alc.thekono.com/"
+#define KONO_SERVER @"https://api.thekono.com/KPI2/"

@@ -90,9 +90,6 @@ typedef enum KCImageCropMode : NSUInteger{
 + (KCService *) contentManager;
 
 
-// use fake function for login
-- (void)loginTestingUser:(void (^)(void ))completeBlock;
-
 #pragma mark - book warehouse top-level function
 
 /**
@@ -535,6 +532,16 @@ typedef enum KCImageCropMode : NSUInteger{
 
 #pragma mark - book warehouse configuration function
 
+/**
+ Interface for setting content access user id. We will use this identifier pari with the token string to 
+ access premium content from our server.
+ 
+ @param accessID
+ The user id. It should be paired with variable "accessToken" in KCServerConfig, otherwise the validation would fail.
+ 
+ */
+- (void)initializeAccessID:(NSString *)accessID;
+
 
 /**
  Interface for setting content server base URL.
@@ -561,21 +568,21 @@ typedef enum KCImageCropMode : NSUInteger{
 /**
  Interface for setting decrypt secret using for decryping downloaded KCBook bundle
  
- @param decryptSecret
- The string we will use to decrypt for all book bundle encypted file. Decrypt function would be used both in online API callback and local bundle file.
+ @param salt
+ The string we will use to get the encrypted bundle secret string. We will use this salt with our decrypt algorithm to get real bundle decrypt secret, which would be used to decrypt our bundle content.
  
  */
-- (void)initializeBundleDecryptSecret:(NSString *)decryptSecret;
+- (void)initializeBundleDecryptSecret:(NSString *)salt;
 
 
 
 /**
  Interface for setting decrypt secret using for decryping content file of HTML format. (The HTML file can be viewed as PDF file for the KCBook.)
  
- @param decryptSecret
- The string we will use to decrypt for all book page file for HTML format.  Decrypt function would be used both in online API callback and local bundle file.
+ @param salt
+ The string we will use to get the encrypted html secret string. We will use this salt with our decrypt algorithm to get real html decrypt secret, which would be used to decrypt our content for HTML file.
  
  */
-- (void)initializeHTMLDecryptSecret:(NSString *)decryptSecret;
+- (void)initializeHTMLDecryptSecret:(NSString *)salt;
 
 @end

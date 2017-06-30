@@ -40,8 +40,8 @@
 
 + (void)setContentOwnerID:(NSString*)contentOwnerID;
 
-+ (void)setBundleDecryptSecret:(NSString*)newBundleDecryptSecret;
++ (void)setBundleDecryptSecret:(NSString*)salt;
 
-+ (void)setHTMLDecryptSecret:(NSString*)newHTMLDecryptSecret;
++ (void)setHTMLDecryptSecret:(NSString*)salt;
 
 @end

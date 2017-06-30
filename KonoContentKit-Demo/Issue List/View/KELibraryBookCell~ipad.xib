@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="N5M-fr-1a2" customClass="KELibraryBookCell">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="402"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N5M-fr-1a2" id="67f-NL-WsE">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="401.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_ipad_issue_list_book" translatesAutoresizingMaskIntoConstraints="NO" id="NBm-GH-mcP" userLabel="backgroundView">
+                        <rect key="frame" x="6" y="0.0" width="276" height="401"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FqE-Pn-14N">
+                        <rect key="frame" x="12" y="0.0" width="264" height="346"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="346" id="dFk-9c-Baf"/>
+                            <constraint firstAttribute="width" constant="264" id="wQq-Ij-jqA"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag_ipad_feed_article_video" translatesAutoresizingMaskIntoConstraints="NO" id="6vF-ej-3Fr">
+                        <rect key="frame" x="12" y="272" width="74" height="74"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="74" id="CCb-oQ-wwY"/>
+                            <constraint firstAttribute="width" constant="74" id="c3h-fM-l3G"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_cover_gradient_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="TUs-zW-Ogi">
+                        <rect key="frame" x="12" y="0.0" width="264" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="IvU-SS-MJA"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="library_new_tag_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="MIS-bL-Sis">
+                        <rect key="frame" x="232" y="6" width="38" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="0eP-VQ-yZO"/>
+                            <constraint firstAttribute="width" constant="38" id="1d9-ag-9MM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOn-fT-sGK" userLabel="issueLabel">
+                        <rect key="frame" x="48" y="359" width="194" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="194" id="0eA-kP-ldR"/>
+                            <constraint firstAttribute="height" constant="20" id="mDb-Vn-6v3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.3411764705882353" green="0.30980392156862746" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="library_new_tag_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="DGN-LJ-2yz">
+                        <rect key="frame" x="188" y="6" width="38" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="3CR-se-RyQ"/>
+                            <constraint firstAttribute="width" constant="38" id="KTm-Gn-VWs"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="NBm-GH-mcP" secondAttribute="trailing" constant="8" id="2OY-38-ama"/>
+                    <constraint firstItem="FqE-Pn-14N" firstAttribute="top" secondItem="NBm-GH-mcP" secondAttribute="top" id="4A5-6i-7vz"/>
+                    <constraint firstItem="TUs-zW-Ogi" firstAttribute="top" secondItem="FqE-Pn-14N" secondAttribute="top" id="DZh-fv-ztj"/>
+                    <constraint firstItem="MIS-bL-Sis" firstAttribute="centerY" secondItem="DGN-LJ-2yz" secondAttribute="centerY" id="Dnc-O2-d35"/>
+                    <constraint firstAttribute="bottom" secondItem="NBm-GH-mcP" secondAttribute="bottom" id="EBS-xW-sq5"/>
+                    <constraint firstItem="MIS-bL-Sis" firstAttribute="top" secondItem="67f-NL-WsE" secondAttribute="top" constant="6" id="JHJ-OK-AeB"/>
+                    <constraint firstItem="NBm-GH-mcP" firstAttribute="leading" secondItem="67f-NL-WsE" secondAttribute="leading" constant="6" id="Pve-cZ-Hah"/>
+                    <constraint firstItem="NBm-GH-mcP" firstAttribute="top" secondItem="67f-NL-WsE" secondAttribute="top" id="StO-dZ-ls4"/>
+                    <constraint firstItem="TUs-zW-Ogi" firstAttribute="leading" secondItem="FqE-Pn-14N" secondAttribute="leading" id="T8D-lI-gg6"/>
+                    <constraint firstItem="eOn-fT-sGK" firstAttribute="centerX" secondItem="67f-NL-WsE" secondAttribute="centerX" id="aGf-p5-Tx5"/>
+                    <constraint firstItem="TUs-zW-Ogi" firstAttribute="trailing" secondItem="FqE-Pn-14N" secondAttribute="trailing" id="dbh-mK-u0w"/>
+                    <constraint firstItem="6vF-ej-3Fr" firstAttribute="bottom" secondItem="FqE-Pn-14N" secondAttribute="bottom" id="dev-xk-Roc"/>
+                    <constraint firstItem="MIS-bL-Sis" firstAttribute="leading" secondItem="DGN-LJ-2yz" secondAttribute="trailing" constant="6" id="f0j-Ha-0qW"/>
+                    <constraint firstItem="FqE-Pn-14N" firstAttribute="centerX" secondItem="NBm-GH-mcP" secondAttribute="centerX" id="gWk-SI-YdP"/>
+                    <constraint firstItem="6vF-ej-3Fr" firstAttribute="leading" secondItem="FqE-Pn-14N" secondAttribute="leading" id="mx9-MP-FK7"/>
+                    <constraint firstItem="eOn-fT-sGK" firstAttribute="top" secondItem="FqE-Pn-14N" secondAttribute="bottom" constant="13" id="yj1-Dq-WO8"/>
+                    <constraint firstAttribute="trailing" secondItem="MIS-bL-Sis" secondAttribute="trailing" constant="20" id="zhY-Of-QcM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="coverImageView" destination="FqE-Pn-14N" id="qcJ-mn-STG"/>
+                <outlet property="firstTag" destination="MIS-bL-Sis" id="DCO-yi-rQN"/>
+                <outlet property="issueLabel" destination="eOn-fT-sGK" id="gLg-7u-NXd"/>
+                <outlet property="mediaTag" destination="6vF-ej-3Fr" id="8zW-oC-Nd8"/>
+                <outlet property="secondTag" destination="DGN-LJ-2yz" id="pZN-UA-B61"/>
+                <outlet property="tagBackgroundView" destination="TUs-zW-Ogi" id="5OS-9p-FXq"/>
+            </connections>
+            <point key="canvasLocation" x="209" y="285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="background_ipad_issue_list_book" width="276" height="402"/>
+        <image name="img_cover_gradient_ipad" width="270" height="36"/>
+        <image name="library_new_tag_ipad" width="54" height="21"/>
+        <image name="tag_ipad_feed_article_video" width="74" height="74"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

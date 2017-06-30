@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KEArticleSelectionMenuViewController">
+            <connections>
+                <outlet property="selectionMenuTitle" destination="lZn-TY-4GP" id="a61-UF-8gQ"/>
+                <outlet property="selectionTable" destination="El8-6l-rSU" id="CIx-Tp-ywG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="El8-6l-rSU">
+                    <rect key="frame" x="0.0" y="48" width="320" height="136"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lZn-TY-4GP">
+                    <rect key="frame" x="5" y="0.0" width="310" height="48"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="V5u-eg-ZOa"/>
+                        <constraint firstAttribute="height" constant="48" id="erY-90-oaG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.3411764705882353" green="0.30980392156862746" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="V5u-eg-ZOa"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="El8-6l-rSU" secondAttribute="bottom" id="PM1-e1-yXX"/>
+                <constraint firstItem="lZn-TY-4GP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cnV-9J-JWw"/>
+                <constraint firstAttribute="trailing" secondItem="lZn-TY-4GP" secondAttribute="trailing" constant="5" id="dnW-mU-gNC"/>
+                <constraint firstItem="El8-6l-rSU" firstAttribute="top" secondItem="lZn-TY-4GP" secondAttribute="bottom" id="duh-kJ-spF"/>
+                <constraint firstItem="lZn-TY-4GP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="tza-0X-tSz"/>
+                <constraint firstAttribute="trailing" secondItem="El8-6l-rSU" secondAttribute="trailing" id="y1Z-Ku-TbO"/>
+                <constraint firstItem="El8-6l-rSU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yyN-wD-V66"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-94" y="-358"/>
+        </view>
+    </objects>
+</document>

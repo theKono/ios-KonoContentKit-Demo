@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="KEArticleSelectionMenuTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="67.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkZ-Y3-rjG">
+                        <rect key="frame" x="15" y="12" width="282" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.3411764705882353" green="0.30980392156862746" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvB-fn-ohi">
+                        <rect key="frame" x="15" y="44.5" width="282" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.56470588235294117" green="0.50980392156862742" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh6-tj-zWX">
+                        <rect key="frame" x="0.0" y="66" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.9137254901960784" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="7PD-Ka-nBc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vvB-fn-ohi" firstAttribute="leading" secondItem="lkZ-Y3-rjG" secondAttribute="leading" id="4js-im-dq1"/>
+                    <constraint firstAttribute="bottom" secondItem="Mh6-tj-zWX" secondAttribute="bottom" id="5Rj-eR-lcj"/>
+                    <constraint firstItem="lkZ-Y3-rjG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="71T-Mx-Ljr"/>
+                    <constraint firstAttribute="trailing" secondItem="Mh6-tj-zWX" secondAttribute="trailing" id="GYt-zs-oYy"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lkZ-Y3-rjG" secondAttribute="trailing" constant="15" id="ROD-OP-JeW"/>
+                    <constraint firstItem="Mh6-tj-zWX" firstAttribute="top" secondItem="lkZ-Y3-rjG" secondAttribute="bottom" constant="20" id="SW8-xU-ZrS"/>
+                    <constraint firstAttribute="bottom" secondItem="lkZ-Y3-rjG" secondAttribute="bottom" constant="32" id="bju-G3-f5y"/>
+                    <constraint firstItem="lkZ-Y3-rjG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="e7Q-Sv-gTa"/>
+                    <constraint firstItem="Mh6-tj-zWX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hjG-9x-JPW"/>
+                    <constraint firstItem="vvB-fn-ohi" firstAttribute="trailing" secondItem="lkZ-Y3-rjG" secondAttribute="trailing" id="kG2-mo-REK"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="bju-G3-f5y"/>
+                        <exclude reference="e7Q-Sv-gTa"/>
+                        <exclude reference="SW8-xU-ZrS"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vvB-fn-ohi" secondAttribute="bottom" constant="9" id="8YY-mp-Mly"/>
+            </constraints>
+            <connections>
+                <outlet property="selectionMenuArticleStat" destination="vvB-fn-ohi" id="HAv-wd-O80"/>
+                <outlet property="selectionMenuArticleTitle" destination="lkZ-Y3-rjG" id="cTX-7S-dg1"/>
+            </connections>
+            <point key="canvasLocation" x="288" y="217"/>
+        </tableViewCell>
+    </objects>
+</document>

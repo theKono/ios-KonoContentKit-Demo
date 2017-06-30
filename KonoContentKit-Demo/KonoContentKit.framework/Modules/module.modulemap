@@ -1,0 +1,6 @@
+framework module KonoContentKit {
+  umbrella header "KonoContentKit.h"
+
+  export *
+  module * { export * }
+}

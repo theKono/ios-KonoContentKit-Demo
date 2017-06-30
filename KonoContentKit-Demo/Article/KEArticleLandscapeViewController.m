@@ -882,7 +882,7 @@ static double FADEIN_DELAY_STEP = 0.15;
         [[KCService contentManager] getPageHTMLForBookPage:magSinglePageInfo progress:nil complete:^(NSString *indexHTMLPath) {
             
             // check the complete item is the same as current item
-            if( [targetFilePath isEqualToString:indexHTMLPath] ){
+            if( [magSinglePageInfo.htmlFilePath isEqualToString:indexHTMLPath] ){
                 if( YES == isFirstPage ){
                     displayScreen.firstPageStatus = KELandscapePageStatusDownloaded;
                 }

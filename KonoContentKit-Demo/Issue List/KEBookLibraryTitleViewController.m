@@ -349,7 +349,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
     KCBook *bookItem = [bookArr objectAtIndex:indexPath.row];
     
     KEArticleViewController *articleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KEArticleViewController"];
-    
+    articleViewController.hidesBottomBarWhenPushed = YES;
     articleViewController.bookItem = bookItem;
     
     [self.navigationController pushViewController:articleViewController animated:YES];
@@ -539,23 +539,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
                          [self.showcaseTableView.tableView layoutIfNeeded];
                      }];
 
-}
-
-#pragma mark - navigation animation
-
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
-                                  animationControllerForOperation:(UINavigationControllerOperation)operation
-                                               fromViewController:(UIViewController*)fromVC
-                                                 toViewController:(UIViewController*)toVC{
-    
-    /*
-    if (operation == UINavigationControllerOperationPush && self == fromVC )
-        return [[PushAnimator alloc] init];
-    
-    if (operation == UINavigationControllerOperationPop && self == toVC )
-        return [[PopAnimator alloc] init];
-    */
-    return nil;
 }
 
 @end

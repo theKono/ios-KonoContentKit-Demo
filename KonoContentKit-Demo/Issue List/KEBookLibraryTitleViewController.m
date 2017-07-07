@@ -26,21 +26,24 @@
 
 static NSString *cellIdentifier = @"cellIdentifier";
 
-@interface KEBookLibraryTitleViewController ()
-
-@property (nonatomic, strong) NSString *titleDescription;
-
-@property (nonatomic, strong) NSArray *categoryYearArray;
-@property (nonatomic, strong) NSMutableDictionary *booksDictionary;
+@interface KEBookLibraryTitleViewController () {
+    
+    NSString *titleDescription;
+    NSArray *categoryYearArray;
+    NSMutableDictionary *booksDictionary;
+    KELibraryTitleHeaderView *titleDescriptionView;
+    
+}
 
 @end
 
 @implementation KEBookLibraryTitleViewController
 
-- (void)viewDidLoad{
+- (void)viewDidLoad {
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
     
     [self.showcaseTableView registerNib:[UINib nibWithNibName:@"KELibraryBookCell" bundle:nil] forCellReuseIdentifier:cellIdentifier];
     self.showcaseTableView.scDatasource = self;
@@ -51,13 +54,13 @@ static NSString *cellIdentifier = @"cellIdentifier";
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"KELibraryTitleHeaderView" owner:nil options:nil];
     
     if( DEVICE_IS_IPAD ){
-        self.titleDescriptionView = (KELibraryTitleHeaderView*)[nib objectAtIndex:1];
+        titleDescriptionView = (KELibraryTitleHeaderView*)[nib objectAtIndex:1];
     }
     else{
-        self.titleDescriptionView = (KELibraryTitleHeaderView*)[nib objectAtIndex:0];
+        titleDescriptionView = (KELibraryTitleHeaderView*)[nib objectAtIndex:0];
     }
     
-    self.booksDictionary = [[NSMutableDictionary alloc] init];
+    booksDictionary = [[NSMutableDictionary alloc] init];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
@@ -66,23 +69,20 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     [[KCService contentManager] getAllYearsContainBooksForTitleID:KonoContentKitDemoMagazine complete:^(NSArray *yearArray) {
         
-        weakSelf.categoryYearArray = [NSMutableArray arrayWithArray:yearArray];
+        categoryYearArray = [NSMutableArray arrayWithArray:yearArray];
         
-        for( NSDictionary* titleYear in yearArray ){
+        for( NSDictionary* titleYear in yearArray ) {
+            
             NSString *year;
-            if( [[titleYear objectForKey:@"year"] isKindOfClass:[NSString class]]){
-                year = [titleYear objectForKey:@"year"];
-            }
-            else{
-                year = [[titleYear objectForKey:@"year"] stringValue];
-            }
-            NSMutableArray *booksArray = [weakSelf.booksDictionary objectForKey:year];
+            year = [[titleYear objectForKey:@"year"] stringValue];
+
+            NSMutableArray *booksArray = [booksDictionary objectForKey:[[titleYear objectForKey:@"year"] stringValue]];
             
             if( booksArray == nil ){
                 
                 [[KCService contentManager] getAllBooksForTitleID:KonoContentKitDemoMagazine forYear:year complete:^(NSArray *bookArray) {
                     
-                    [weakSelf.booksDictionary setObject:bookArray forKey:year];
+                    [booksDictionary setObject:bookArray forKey:year];
                     
                 } fail:^(NSError *error) {
                     
@@ -126,7 +126,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     [[KCService contentManager] getTitleInfoForTitleID:KonoContentKitDemoMagazine complete:^(NSDictionary *titleInfo) {
         
-        self.titleDescription = titleInfo[@"description"];
+        titleDescription = titleInfo[@"description"];
         self.navigationItem.title = titleInfo[@"name"];
         [self loadTitleHeaderView];
         
@@ -142,57 +142,57 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     NSAttributedString *attString;
     
-    self.titleDescriptionView.titleDescription.text = self.titleDescription;
-    self.titleDescriptionView.backgroundColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1.000];
-    self.titleDescriptionView.delegate = self;
+    titleDescriptionView.titleDescription.text = titleDescription;
+    titleDescriptionView.backgroundColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1.000];
+    titleDescriptionView.delegate = self;
     
     
     if( DEVICE_IS_IPAD ){
-        attString = [KETextUtil attributedStringWithColor:[UIColor colorWithRed:0.341 green:0.31 blue:0.224 alpha:1.000] withFontSize:16 withLineSpacing:8.0  withText:self.titleDescription ];
+        attString = [KETextUtil attributedStringWithColor:[UIColor colorWithRed:0.341 green:0.31 blue:0.224 alpha:1.000] withFontSize:16 withLineSpacing:8.0  withText:titleDescription ];
         
         
         CGSize size = [attString boundingRectWithSize:CGSizeMake(self.showcaseTableView.frame.size.width - 208, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil].size;
-        self.titleDescriptionView.titleDescription.numberOfLines = 0;
-        self.titleDescriptionView.titleDescription.attributedText = attString;
+        titleDescriptionView.titleDescription.numberOfLines = 0;
+        titleDescriptionView.titleDescription.attributedText = attString;
         
         /* default we keep bottom 20px padding*/
-        [self.titleDescriptionView.titleDescription mas_updateConstraints:^(MASConstraintMaker *make) {
+        [titleDescriptionView.titleDescription mas_updateConstraints:^(MASConstraintMaker *make) {
             
             make.height.equalTo( @( ceilf(size.height) ) );
             
         }];
-        CGRect newFrame = self.titleDescriptionView.frame;
+        CGRect newFrame = titleDescriptionView.frame;
         newFrame.size.height = MAX( ceilf(size.height) + 60 , 100 );
-        self.titleDescriptionView.frame = newFrame;
+        titleDescriptionView.frame = newFrame;
         
-        self.showcaseTableView.tableView.tableHeaderView = self.titleDescriptionView;
+        self.showcaseTableView.tableView.tableHeaderView = titleDescriptionView;
     }
     else {
         UIScreen *screen = [UIScreen mainScreen];
         CGFloat descriptionMargin = 15;
         CGFloat descriptionFieldWidth = screen.bounds.size.width - 2 * descriptionMargin;
         
-        attString = [KETextUtil attributedStringWithColor:[UIColor colorWithRed:0.341 green:0.31 blue:0.224 alpha:1.000] withFontSize:14 withText:self.titleDescription ];
+        attString = [KETextUtil attributedStringWithColor:[UIColor colorWithRed:0.341 green:0.31 blue:0.224 alpha:1.000] withFontSize:14 withText:titleDescription ];
         
         CGSize size = [attString boundingRectWithSize:CGSizeMake(descriptionFieldWidth, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil].size;
         
-        self.titleDescriptionView.titleDescription.attributedText = attString;
+        titleDescriptionView.titleDescription.attributedText = attString;
 
-        if (floor(size.height) <= self.titleDescriptionView.titleDescription.frame.size.height) {
-            self.titleDescriptionView.showDescriptionBtn.alpha = 0;
+        if (floor(size.height) <= titleDescriptionView.titleDescription.frame.size.height) {
+            titleDescriptionView.showDescriptionBtn.alpha = 0;
             
-            [self.titleDescriptionView.showDescriptionBtn removeFromSuperview];
+            [titleDescriptionView.showDescriptionBtn removeFromSuperview];
             
-            CGRect newFrame = self.titleDescriptionView.frame;
+            CGRect newFrame = titleDescriptionView.frame;
             newFrame.size.height = newFrame.size.height - 33;
-            self.titleDescriptionView.frame = newFrame;
+            titleDescriptionView.frame = newFrame;
             
-            self.showcaseTableView.tableView.tableHeaderView = self.titleDescriptionView;
+            self.showcaseTableView.tableView.tableHeaderView = titleDescriptionView;
             
         }
         else {
-            self.titleDescriptionView.showDescriptionBtn.alpha = 1;
-            self.showcaseTableView.tableView.tableHeaderView = self.titleDescriptionView;
+            titleDescriptionView.showDescriptionBtn.alpha = 1;
+            self.showcaseTableView.tableView.tableHeaderView = titleDescriptionView;
         }
     }
    
@@ -201,33 +201,23 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (NSInteger)numberOfSectionInShowcaseView:(KEShowcaseTableView *)showcaseView{
     
-    return [self.categoryYearArray count];
+    return [categoryYearArray count];
 }
-
 
 - (NSInteger)showcaseView:(KEShowcaseTableView *)showcaseView numberOfItemsForSection:(NSInteger)section{
     
-    NSString *year = [[NSString alloc]initWithString:[[[self.categoryYearArray objectAtIndex:section] objectForKey:@"year"] stringValue]];
+    NSString *year = [[NSString alloc]initWithString:[[[categoryYearArray objectAtIndex:section] objectForKey:@"year"] stringValue]];
     
-    NSArray *bookArr = [self.booksDictionary objectForKey:year];
+    NSArray *bookArr = [booksDictionary objectForKey:year];
     
     
     return [bookArr count];
     
 }
 
-
 - (NSString *)showcaseView:(KEShowcaseTableView *)shoecaseView titleForSection:(NSInteger)section{
     
-    NSString *title;
-    if( [[[self.categoryYearArray objectAtIndex:section] objectForKey:@"year"] isKindOfClass:[NSString class]] ){
-        title = [[self.categoryYearArray objectAtIndex:section] objectForKey:@"year"];
-    }
-    else{
-        title = [[[self.categoryYearArray objectAtIndex:section] objectForKey:@"year"] stringValue];
-    }
-    
-    return title;
+    return [[[categoryYearArray objectAtIndex:section] objectForKey:@"year"] stringValue];
 }
 
 - (CGFloat)showcaseView:(KEShowcaseTableView *)showcaseView heightForHeaderInSection:(NSInteger)section{
@@ -285,9 +275,9 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (void)showcaseView:(KEShowcaseTableView *)showcaseView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *year = [[NSString alloc] initWithString:[[[self.categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
+    NSString *year = [[NSString alloc] initWithString:[[[categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
     
-    NSArray *bookArr = [self.booksDictionary objectForKey:year];
+    NSArray *bookArr = [booksDictionary objectForKey:year];
     KCBook *bookItem = [bookArr objectAtIndex:indexPath.row];
     
     KEArticleViewController *articleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KEArticleViewController"];
@@ -301,9 +291,9 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     KELibraryBookCell *cell = (KELibraryBookCell*)[showcaseCell dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSString *year = [[NSString alloc]initWithString:[[[self.categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
+    NSString *year = [[NSString alloc]initWithString:[[[categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
     
-    NSArray *bookArr = [self.booksDictionary objectForKey:year];
+    NSArray *bookArr = [booksDictionary objectForKey:year];
     
     KCBook *book = [bookArr objectAtIndex:indexPath.row];
     
@@ -313,7 +303,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
     cell.coverImageView.image = nil;
     cell.issueLabel.text = book.issue;
     
-    //todo: to check the media tag could be showed properly
     if (YES == book.isHasAudio || YES == book.isHasVideo) {
         cell.mediaTag.alpha = 1.0;
     }
@@ -328,13 +317,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
         cell.secondTag.alpha = 0.0;
         
         [cell setupTagImage:KEIssueCoverTagTypeNew];
-        
     }
     else {
         cell.tagBackgroundView.alpha = 0.0;
         cell.firstTag.alpha = 0.0;
         cell.secondTag.alpha = 0.0;
-    
     }
     
     return cell;
@@ -345,8 +332,8 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     KELibraryBookCell *displayCell = (KELibraryBookCell *)cell;
     
-    NSString *year = [[NSString alloc]initWithString:[[[self.categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
-    NSArray *bookArr = [self.booksDictionary objectForKey:year];
+    NSString *year = [[NSString alloc]initWithString:[[[categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
+    NSArray *bookArr = [booksDictionary objectForKey:year];
     KCBook *book = [bookArr objectAtIndex:indexPath.row];
     
     [displayCell.coverImageView pin_setImageFromURL:[NSURL URLWithString:book.coverImageMedium]];
@@ -361,17 +348,15 @@ static NSString *cellIdentifier = @"cellIdentifier";
         return WIDTH_FOR_CELL;        
     }
 
-    
 }
 
 
-
-- (void)showcaseView:(KEShowcaseTableView *)showcaseView willDisplaySection:(NSInteger)section{
+- (void)showcaseView:(KEShowcaseTableView *)showcaseView willDisplaySection:(NSInteger)section {
     
-    NSString *year = [[NSString alloc]initWithString:[[[self.categoryYearArray objectAtIndex:section] objectForKey:@"year"] stringValue]];
+    NSString *year = [[NSString alloc]initWithString:[[[categoryYearArray objectAtIndex:section] objectForKey:@"year"] stringValue]];
     NSMutableArray *booksArray;
 
-    booksArray = [self.booksDictionary objectForKey:year];
+    booksArray = [booksDictionary objectForKey:year];
 
     if( booksArray == nil ) {
         
@@ -379,7 +364,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
         
         [[KCService contentManager] getAllBooksForTitleID:KonoContentKitDemoMagazine forYear:year complete:^(NSArray *bookArray) {
             
-            [weakSelf.booksDictionary setObject:bookArray forKey:year];
+            [booksDictionary setObject:bookArray forKey:year];
             [weakSelf.showcaseTableView reloadData];
             
         } fail:^(NSError *error) {
@@ -389,8 +374,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -402,45 +386,45 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     NSAttributedString *attString;
     
-    attString = [KETextUtil attributedStringWithColor:[UIColor colorWithRed:0.341 green:0.31 blue:0.224 alpha:1.000] withFontSize:14 withText:self.titleDescription];
+    attString = [KETextUtil attributedStringWithColor:[UIColor colorWithRed:0.341 green:0.31 blue:0.224 alpha:1.000] withFontSize:14 withText:titleDescription];
     
-    CGSize size = [attString boundingRectWithSize:CGSizeMake(self.titleDescriptionView.titleDescription.frame.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    CGSize size = [attString boundingRectWithSize:CGSizeMake(titleDescriptionView.titleDescription.frame.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil].size;
 
     if (wantExpendView) {
         
         [UIView animateWithDuration:0.3
                          animations:^{
-                             CGRect newFrame = self.titleDescriptionView.frame;
+                             CGRect newFrame = titleDescriptionView.frame;
                              newFrame.size.height = newFrame.size.height + ceilf(size.height - 62.f);
-                             self.titleDescriptionView.frame = newFrame;
+                             titleDescriptionView.frame = newFrame;
                              
                          }
                          completion:^(BOOL finished) {
-                             CGRect newFrame = self.titleDescriptionView.titleDescription.frame;
+                             CGRect newFrame = titleDescriptionView.titleDescription.frame;
                              newFrame.size.height = ceilf(size.height);
-                             self.titleDescriptionView.titleDescription.frame = newFrame;
+                             titleDescriptionView.titleDescription.frame = newFrame;
                              
-                             [self.titleDescriptionView.titleDescription setNumberOfLines:0];
+                             [titleDescriptionView.titleDescription setNumberOfLines:0];
                          }];
         
     } else {
         
-        CGRect newFrame = self.titleDescriptionView.titleDescription.frame;
+        CGRect newFrame = titleDescriptionView.titleDescription.frame;
         newFrame.size.height = 62;
-        self.titleDescriptionView.titleDescription.frame = newFrame;
+        titleDescriptionView.titleDescription.frame = newFrame;
         
-        [self.titleDescriptionView.titleDescription setNumberOfLines:3];
+        [titleDescriptionView.titleDescription setNumberOfLines:3];
         
         [UIView animateWithDuration:0.3
                          animations:^{
-                             CGRect newFrame = self.titleDescriptionView.frame;
+                             CGRect newFrame = titleDescriptionView.frame;
                              newFrame.size.height = newFrame.size.height - ceilf(size.height - 62.f);
-                             self.titleDescriptionView.frame = newFrame;
+                             titleDescriptionView.frame = newFrame;
                          }];
         
     }
 
-    self.showcaseTableView.tableView.tableHeaderView = self.titleDescriptionView;
+    self.showcaseTableView.tableView.tableHeaderView = titleDescriptionView;
 
     [UIView animateWithDuration:0.3
                      animations:^{

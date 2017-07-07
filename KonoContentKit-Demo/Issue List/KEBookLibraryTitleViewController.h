@@ -15,5 +15,5 @@
 @interface KEBookLibraryTitleViewController : UIViewController<KEShowcaseTableViewDelegate, KEShowcaseTableViewDatasource, KELibraryTitleHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet KEShowcaseTableView *showcaseTableView;
-@property (nonatomic, strong) KELibraryTitleHeaderView *titleDescriptionView;
+
 @end

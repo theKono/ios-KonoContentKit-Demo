@@ -14,22 +14,8 @@
 - (void)awakeFromNib{
     
     [super awakeFromNib];
-    [self initButtonImage];
-    
 }
 
-- (void)initButtonImage{
-    
-//    if( DEVICE_IS_IPAD ){
-//        [self.followTitleBtn setImage:[UIImage imageNamed:LocalizedString(@"issue_list_follow_ipad_normal_image")] forState:UIControlStateNormal];
-//        [self.followTitleBtn setImage:[UIImage imageNamed:LocalizedString(@"issue_list_follow_ipad_highlight_image")] forState:UIControlStateHighlighted];
-//    }
-//    else{
-//        [self.followTitleBtn setImage:[UIImage imageNamed:LocalizedString(@"issue_list_follow_iphone_normal_image")] forState:UIControlStateNormal];
-//        [self.followTitleBtn setImage:[UIImage imageNamed:LocalizedString(@"issue_list_follow_iphone_highlight_image")] forState:UIControlStateHighlighted];
-//    }
-
-}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -51,7 +37,6 @@
         [self.delegate showDescriptionBtnPressed:YES];
         self.showDescriptionBtn.selected = YES;
     }
-    
     
 }
 

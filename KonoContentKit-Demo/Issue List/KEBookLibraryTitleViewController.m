@@ -5,11 +5,10 @@
 //  Created by Neo on 4/14/14.
 //  Copyright (c) 2014 Kono. All rights reserved.
 //
-
+#import "KEArticleViewController.h"
 #import "KEBookLibraryTitleViewController.h"
 #import "KEColor.h"
 #import "KETextUtil.h"
-#import "KEArticleViewController.h"
 
 #import <MZFormSheetController.h>
 #import <MBProgressHUD.h>
@@ -25,8 +24,6 @@
 #define ALERT_OFFSET_DOWNLOAD  2001
 #define ALERT_OFFSET_VERIFY_EMAIL 2002
 
-//static CGFloat ANIMATION_INTERVAL = 0.2;
-
 static NSString *cellIdentifier = @"cellIdentifier";
 
 @interface KEBookLibraryTitleViewController ()
@@ -34,10 +31,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 @property (nonatomic, strong) NSString *titleDescription;
 
 @property (nonatomic, strong) NSArray *categoryYearArray;
-@property (atomic, strong) NSMutableDictionary *booksDictionary;
-@property (nonatomic, strong) NSIndexPath *currentIndexPath;
-
-@property (nonatomic) CGFloat lastScrollViewOffset;
+@property (nonatomic, strong) NSMutableDictionary *booksDictionary;
 
 @end
 
@@ -115,54 +109,26 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if (self.currentIndexPath) {
-        [self.showcaseTableView reloadRowsAtIndexPaths:@[self.currentIndexPath]];
-    }
-}
-
-
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:animated];
-
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    
-    [super viewDidDisappear:animated];
-    if ( [self.navigationController.viewControllers indexOfObject:self] == NSNotFound ) {
-        
-        // back button was pressed.  We know this is true because self is no longer
-        // in the navigation stack.
-        self.showcaseTableView.scDatasource = nil;
-        self.showcaseTableView.scDelegate = nil;
-        self.showcaseTableView.tableView.delegate = nil;
-        self.showcaseTableView.tableView.dataSource = nil;
-    }
-    
-}
-
 - (void)dealloc{
     
     [[NSNotificationCenter defaultCenter]
                                             removeObserver:self
                                                       name:@"KEBookTitleFollowed"
                                                     object:nil];
+    self.showcaseTableView.scDatasource = nil;
+    self.showcaseTableView.scDelegate = nil;
+    self.showcaseTableView.tableView.delegate = nil;
+    self.showcaseTableView.tableView.dataSource = nil;
+    
 }
 
 - (void)getTitleInformation{
     
-    [[KCService contentManager] getAllTitles:^(NSArray *titleArray) {
+    [[KCService contentManager] getTitleInfoForTitleID:KonoContentKitDemoMagazine complete:^(NSDictionary *titleInfo) {
         
-        for (NSDictionary *titleDic in titleArray) {
-            if ([titleDic[@"title"] isEqualToString:KonoContentKitDemoMagazine]) {
-                self.titleDescription = titleDic[@"description"];
-                self.navigationItem.title = titleDic[@"name"];
-                [self loadTitleHeaderView];
-            }
-        }
+        self.titleDescription = titleInfo[@"description"];
+        self.navigationItem.title = titleInfo[@"name"];
+        [self loadTitleHeaderView];
         
     } fail:^(NSError *error) {
         
@@ -230,26 +196,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
         }
     }
    
-}
-
-- (NSString *)refineIssueLabelText:(NSString *)issueText{
-    
-    NSString *refineIssueText;
-    
-    NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"20../" options:NSRegularExpressionCaseInsensitive error:&error];
-    NSString *modifiedString = [regex stringByReplacingMatchesInString:issueText options:0 range:NSMakeRange(0, [issueText length]) withTemplate:@""];
-    
-    NSRange range = [modifiedString rangeOfString:@" "];
-    
-    if( range.location != NSNotFound ){
-    
-        refineIssueText = [modifiedString stringByReplacingCharactersInRange:range withString:@"\n"];
-    }
-    else{
-        refineIssueText = modifiedString;
-    }
-    return refineIssueText;
 }
 
 
@@ -339,10 +285,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (void)showcaseView:(KEShowcaseTableView *)showcaseView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.currentIndexPath = indexPath;
-    //[self performSegueWithIdentifier:@"openBookLibraryDetailPage" sender:self];
-    
-    /* prototype entry point */
     NSString *year = [[NSString alloc] initWithString:[[[self.categoryYearArray objectAtIndex:indexPath.section] objectForKey:@"year"] stringValue]];
     
     NSArray *bookArr = [self.booksDictionary objectForKey:year];
@@ -369,13 +311,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
     cell.backgroundColor = [UIColor clearColor];
     
     cell.coverImageView.image = nil;
-    
-    if( DEVICE_IS_IPAD ){
-        cell.issueLabel.text = book.issue;
-    }
-    else{
-        cell.issueLabel.text = [self refineIssueLabelText:book.issue];
-    }
+    cell.issueLabel.text = book.issue;
     
     //todo: to check the media tag could be showed properly
     if (YES == book.isHasAudio || YES == book.isHasVideo) {
@@ -384,31 +320,21 @@ static NSString *cellIdentifier = @"cellIdentifier";
     else{
         cell.mediaTag.alpha = 0.0;
     }
-   
-    BOOL isHasTranslation = NO;
+
     
     if (YES == book.isNew) {
         cell.tagBackgroundView.alpha = 1.0;
         cell.firstTag.alpha = 1.0;
         cell.secondTag.alpha = 0.0;
         
-        if (isHasTranslation) {
-            cell.secondTag.alpha = 1.0;
-            [cell setupTagImage:KEIssueCoverTagTypeBoth];
-        } else {
-            [cell setupTagImage:KEIssueCoverTagTypeNew];
-        }
+        [cell setupTagImage:KEIssueCoverTagTypeNew];
+        
     }
     else {
         cell.tagBackgroundView.alpha = 0.0;
         cell.firstTag.alpha = 0.0;
         cell.secondTag.alpha = 0.0;
-        
-        if (isHasTranslation) {
-            cell.tagBackgroundView.alpha = 1.0;
-            cell.firstTag.alpha = 1.0;
-            [cell setupTagImage:KEIssueCoverTagTypeTranslation];
-        }
+    
     }
     
     return cell;
@@ -425,19 +351,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
     [displayCell.coverImageView pin_setImageFromURL:[NSURL URLWithString:book.coverImageMedium]];
     
-//    CGFloat readPercentage = [KEPersonalReadingRecord getPersonalMagazineReadingPercentage:user.kid withMagazineID:magazineItem.bid];
-//    NSInteger progressBarHeight = ceil( readPercentage * displayCell.readingProgressBase.frame.size.height );
-//   
-//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//        displayCell.readingProgressValue.frame = CGRectMake(0, displayCell.readingProgressBase.frame.size.height, displayCell.readingProgressBase.frame.size.width, 0);
-//        [UIView animateWithDuration:0.5
-//                              delay:(ANIMATION_INTERVAL * indexPath.row)
-//                            options:UIViewAnimationOptionCurveEaseInOut
-//                         animations:^{
-//                             displayCell.readingProgressValue.frame = CGRectMake(0, displayCell.readingProgressBase.frame.size.height - progressBarHeight, displayCell.readingProgressBase.frame.size.width, progressBarHeight);
-//                         } completion:^(BOOL finished){
-//                         }];
-//    }];
 }
 
 - (CGFloat)widthForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -484,11 +397,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 
 #pragma mark - header view delegate
-
-- (void)followBtnPressed:(void (^)(void))followBlock unFollowComplete:(void (^)(void))unfollowBlock{
-
-    
-}
 
 - (void)showDescriptionBtnPressed:(BOOL)wantExpendView {
     

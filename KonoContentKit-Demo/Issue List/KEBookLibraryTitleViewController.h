@@ -12,7 +12,7 @@
 #import "KELibraryBookCell.h"
 #import "KELibraryTitleHeaderView.h"
 
-@interface KEBookLibraryTitleViewController : UIViewController<KEShowcaseTableViewDelegate, KEShowcaseTableViewDatasource, KELibraryTitleHeaderViewDelegate, UINavigationControllerDelegate>
+@interface KEBookLibraryTitleViewController : UIViewController<KEShowcaseTableViewDelegate, KEShowcaseTableViewDatasource, KELibraryTitleHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet KEShowcaseTableView *showcaseTableView;
 @property (nonatomic, strong) KELibraryTitleHeaderView *titleDescriptionView;

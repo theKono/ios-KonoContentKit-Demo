@@ -202,6 +202,9 @@ typedef enum KCImageCropMode : NSUInteger{
 
 - (void)getLatestBookForTitleID:(NSString *)titleID complete:(void (^)(KCBook *))completeBlock fail:(void (^)(NSError *))failBlock;
 
+
+- (void)getTitleInfoForTitleID:(NSString *)titleID complete:(void (^)(NSDictionary *))completeBlock fail:(void (^)(NSError *))failBlock;
+
 // individual book related function
 
 

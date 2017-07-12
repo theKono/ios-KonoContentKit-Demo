@@ -15,7 +15,7 @@
 @class KEMagazineItem;
 
 
-@interface KEBookLibraryTOCPageViewController : UIViewController<UIViewControllerPreviewingDelegate,UIGestureRecognizerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface KEBookLibraryTOCPageViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) KCBook *bookItem;
 

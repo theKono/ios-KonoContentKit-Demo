@@ -20,7 +20,6 @@
 		4D8B22E31EEFD3FC00B82050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B22E21EEFD3FC00B82050 /* Assets.xcassets */; };
 		4D8B22E61EEFD3FC00B82050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B22E41EEFD3FC00B82050 /* LaunchScreen.storyboard */; };
 		4D8B22F11EEFD3FD00B82050 /* KonoContentKit_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B22F01EEFD3FD00B82050 /* KonoContentKit_DemoTests.m */; };
-		4D8B23021EF0F34B00B82050 /* KEShowcaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23011EF0F34B00B82050 /* KEShowcaseTableView.m */; };
 		4D8B23071EF0F38500B82050 /* KEColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23041EF0F38500B82050 /* KEColor.m */; };
 		4D8B230F1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B230E1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m */; };
 		4D8B23141EF114D300B82050 /* KELibraryTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B23121EF114D300B82050 /* KELibraryTitleHeaderView.m */; };
@@ -98,8 +97,6 @@
 		4D8B22EC1EEFD3FD00B82050 /* KonoContentKit-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KonoContentKit-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8B22F01EEFD3FD00B82050 /* KonoContentKit_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KonoContentKit_DemoTests.m; sourceTree = "<group>"; };
 		4D8B22F21EEFD3FD00B82050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D8B23001EF0F34B00B82050 /* KEShowcaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEShowcaseTableView.h; sourceTree = "<group>"; };
-		4D8B23011EF0F34B00B82050 /* KEShowcaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEShowcaseTableView.m; sourceTree = "<group>"; };
 		4D8B23031EF0F38500B82050 /* KEColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEColor.h; sourceTree = "<group>"; };
 		4D8B23041EF0F38500B82050 /* KEColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEColor.m; sourceTree = "<group>"; };
 		4D8B230C1EF0F43C00B82050 /* Kono-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kono-Prefix.pch"; sourceTree = "<group>"; };
@@ -239,7 +236,6 @@
 			children = (
 				4D2DF4421EF8D4EE002FD075 /* KonoContentKit.framework */,
 				4D8B22FE1EF0F27700B82050 /* Util */,
-				4D8B22FF1EF0F34B00B82050 /* BasicComponent */,
 				4D34BA1E1EFA1BC50063E2C0 /* Sandwich */,
 				4D8B22FB1EF0F25800B82050 /* Article */,
 				4DDF74451EFCCC7200A719B5 /* TOC */,
@@ -314,15 +310,6 @@
 				4DDF74C61F021D5300A719B5 /* UIImageViewAligned.m */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		4D8B22FF1EF0F34B00B82050 /* BasicComponent */ = {
-			isa = PBXGroup;
-			children = (
-				4D8B23001EF0F34B00B82050 /* KEShowcaseTableView.h */,
-				4D8B23011EF0F34B00B82050 /* KEShowcaseTableView.m */,
-			);
-			path = BasicComponent;
 			sourceTree = "<group>";
 		};
 		4D8B23101EF114D300B82050 /* View */ = {
@@ -641,7 +628,6 @@
 				4D34BA261EFA1BC50063E2C0 /* KEPageWebView.m in Sources */,
 				4D8B23071EF0F38500B82050 /* KEColor.m in Sources */,
 				4D8B231A1EF114F800B82050 /* KELibraryBookCell.m in Sources */,
-				4D8B23021EF0F34B00B82050 /* KEShowcaseTableView.m in Sources */,
 				4DDF748A1F00C78300A719B5 /* KEFitReadingViewCell.m in Sources */,
 				4D8B23141EF114D300B82050 /* KELibraryTitleHeaderView.m in Sources */,
 				4DDF74C71F021D5300A719B5 /* UIImageViewAligned.m in Sources */,

@@ -22,33 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIF-xe-dLv" customClass="KEShowcaseTableView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4m-yE-dx3">
-                                        <rect key="frame" x="254" y="528" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euX-S7-NKN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="BIF-xe-dLv" secondAttribute="bottom" id="8F6-BX-xzG"/>
-                            <constraint firstItem="BIF-xe-dLv" firstAttribute="top" secondItem="sqR-T7-tob" secondAttribute="bottom" id="N09-6D-zAz"/>
-                            <constraint firstAttribute="trailing" secondItem="BIF-xe-dLv" secondAttribute="trailing" id="qE4-sQ-5Bm"/>
-                            <constraint firstItem="BIF-xe-dLv" firstAttribute="leading" secondItem="0I1-lR-cpw" secondAttribute="leading" id="vuD-6H-IeW"/>
+                            <constraint firstItem="euX-S7-NKN" firstAttribute="leading" secondItem="0I1-lR-cpw" secondAttribute="leading" id="9GB-0Q-Dwt"/>
+                            <constraint firstAttribute="trailing" secondItem="euX-S7-NKN" secondAttribute="trailing" id="f7x-00-FHP"/>
+                            <constraint firstItem="euX-S7-NKN" firstAttribute="bottom" secondItem="Z4I-kY-EJp" secondAttribute="top" id="fdt-jc-d51"/>
+                            <constraint firstItem="euX-S7-NKN" firstAttribute="top" secondItem="sqR-T7-tob" secondAttribute="bottom" constant="-64" id="y5M-lT-vfy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7yr-II-yQ2">
                         <barButtonItem key="backBarButtonItem" title=" " id="d6Q-5j-e5n"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="showcaseTableView" destination="BIF-xe-dLv" id="B9D-yl-McO"/>
+                        <outlet property="tableView" destination="euX-S7-NKN" id="l5j-Mi-oz8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duX-u5-CKp" userLabel="First Responder" sceneMemberID="firstResponder"/>

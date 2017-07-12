@@ -16,7 +16,7 @@ typedef enum KEIssueCoverTagType : NSUInteger {
 
 @class KELibraryBookCell;
 
-@interface KELibraryBookCell : UITableViewCell
+@interface KELibraryBookCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *mediaTag;

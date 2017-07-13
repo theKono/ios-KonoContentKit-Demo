@@ -116,16 +116,8 @@ static double FADEIN_DELAY_STEP = 0.15;
                                                    name:UIDeviceOrientationDidChangeNotification
                                                  object:nil];
     
-    [[NSNotificationCenter defaultCenter]
-                                            addObserver:self
-                                               selector:@selector(pageReload:)
-                                                   name:@"KEPageDownloadStatusChange"
-                                                 object:nil];
-    
     [self customizeLayout];
     
-    
-    self.isWebviewInsideButtonActing = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -271,7 +263,6 @@ static double FADEIN_DELAY_STEP = 0.15;
     [self.thumbnailListView removeFromSuperview];
     
 }
-
 
 - (void)dealloc{
     
@@ -421,8 +412,6 @@ static double FADEIN_DELAY_STEP = 0.15;
     self.basePageIndex = MIN( self.basePageIndex, [self.bookItem.pageMappingArray count] - 1 );
     
     self.hasInitialized = NO;
-    self.isWebviewInsideButtonActing = NO;
-    self.articleLockedSet = [[NSMutableSet alloc] init];
     self.webviewFadeinDelay = [self optimizeDelayTimeByDevice];
     self.isEvenPageAsFirstPage = YES;
     self.isNeedToShowFlipIndicator = YES;
@@ -656,26 +645,6 @@ static double FADEIN_DELAY_STEP = 0.15;
     
 }
 
-- (void)pageReload:(NSNotification*)notification{
-    
-    NSDictionary *receiveInfo = [notification userInfo];
-    KCBookArticle *articleItem = [receiveInfo objectForKey:@"article"];
-    NSInteger indexOffset = [[receiveInfo objectForKey:@"pageIndex"] integerValue];
-    
-    NSInteger articleIndex = [self.bookItem.articleArray indexOfObject:articleItem];
-    NSInteger downloadCompleteIdx = articleIndex + indexOffset;
-    NSInteger screenIdx = [self getScreenIndexWithPageIndex:downloadCompleteIdx isEvenPageFirst:self.isEvenPageAsFirstPage];
-
-    if( [self.articleLockedSet containsObject:@( downloadCompleteIdx )] ){
-        
-        if( screenIdx == self.currentScreenIndex ){
-            [self showContentWithScreenIndex:screenIdx isPreload:NO];
-        }
-        [self.articleLockedSet removeObject:@( downloadCompleteIdx )];
-    }
-    
-}
-
 
 #pragma mark - gesture handle function
 
@@ -896,34 +865,6 @@ static double FADEIN_DELAY_STEP = 0.15;
             
             NSLog(@"getPageHTMLForBookPage fail:%@", error);
             
-//            if( KEArticleErrorStatusCodeAccessKeyNull == statusCode ){
-//                if( YES == isFirstPage ){
-//                    displayScreen.firstPageStatus = KELandscapePageStatusUnauthorized;
-//                }
-//                else{
-//                    displayScreen.secondPageStatus = KELandscapePageStatusUnauthorized;
-//                }
-//                [weakSelf showContentWithScreenIndex:screenIndex isPreload:isPreload];
-//                
-//            }
-//            else if( statusCode == KEArticleErrorStatusCodeDownloadError || statusCode == KEArticleErrorStatusCodeBadFile ){
-//                
-//                
-//                [KEUtil showGlobalMessage:LocalizedString(@"global_error_fetch_data")];
-//            }
-//            else if( statusCode ==  KEArticleErrorStatusCodeDownloadLock ){
-//                [weakSelf.articleLockedSet addObject:@(targetPageIdx)];
-//            }
-//            else{
-//                if( statusCode ==  KEArticleErrorStatusCodeUserTokenExpired ){
-//                    [KEUtil showGlobalMessage:LocalizedString(@"login_require_msg_expired")];
-//                }
-//                else if( statusCode == KEArticleErrorStatusCodeNullResult ){
-//                    [KEUtil showGlobalMessage:LocalizedString(@"global_error_network")];
-//                    
-//                }
-//            }
-            
         }];
     }
 }
@@ -940,7 +881,6 @@ static double FADEIN_DELAY_STEP = 0.15;
     KCBookPage *rightPageInfo;
     
     NSArray *allArticlesArray;
-    NSArray *uniqueArticleArray;
     
     if( screen.firstPageStatus == KELandscapePageStatusUnknown ||
         screen.firstPageStatus == KELandscapePageStatusRequesting ||
@@ -1364,8 +1304,6 @@ static double FADEIN_DELAY_STEP = 0.15;
     NSDictionary *clickArticleInfo = [[NSDictionary alloc]initWithObjectsAndKeys:
                                       item,@"article",
                                       magazineIdxPath,@"pageIndexPath",
-                                      self.baseViewController,@"baseViewController",
-                                      @(YES),@"isThumbnailClick",
                                       nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"KEMagazinePageChange" object:nil userInfo:clickArticleInfo];
@@ -1664,7 +1602,7 @@ static double FADEIN_DELAY_STEP = 0.15;
 #pragma mark - ios9 webview delegate
 - (void)userDidSingleTapOnView:(KEPageWebView *)view{
     
-    if( view.scrollView.zoomScale <= 1.0  && NO == self.isWebviewInsideButtonActing ){
+    if( view.scrollView.zoomScale <= 1.0  ){
     
         [self updateCorrectBtnStatus];
         [self slideToCurrentPageThumbnail];
@@ -1683,12 +1621,8 @@ static double FADEIN_DELAY_STEP = 0.15;
 
 - (void)userClickInViewWithURL:(NSURL *)url{
     
-    if ([url.scheme isEqualToString:@"kono"] ){
-        
-    }
-    else {
-        [[UIApplication sharedApplication] openURL:url];
-    }
+    [[UIApplication sharedApplication] openURL:url];
+    
 }
 
 #pragma mark - older webview delegate
@@ -1697,12 +1631,7 @@ static double FADEIN_DELAY_STEP = 0.15;
     
     if( navigationType == UIWebViewNavigationTypeLinkClicked ){
         
-        if ([request.URL.scheme isEqualToString:@"kono"] ){
-            
-        }
-        else{
-            [[UIApplication sharedApplication] openURL:request.URL];
-        }
+        [[UIApplication sharedApplication] openURL:request.URL];
         return NO;
     }
     
@@ -1712,7 +1641,7 @@ static double FADEIN_DELAY_STEP = 0.15;
 - (void)userDidSingleTapOnFatView:(KEFatPageWebView*)view{
     
     CGFloat actualZoomScale = 1.0 / view.scrollView.minimumZoomScale;
-    if( actualZoomScale <= 1.0 && NO == self.isWebviewInsideButtonActing ){
+    if( actualZoomScale <= 1.0 ){
         
         [self updateCorrectBtnStatus];
         [self slideToCurrentPageThumbnail];

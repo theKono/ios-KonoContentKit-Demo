@@ -7,7 +7,6 @@
 //
 
 #import "KEArticleViewController.h"
-//#import "KEArticleFitReadingViewController.h"
 #import "KEBookLibraryDetailPageInformationViewController.h"
 #import "KEBookLibraryTOCPageViewController.h"
 #import "KEBookLibraryItemCell.h"
@@ -20,8 +19,6 @@
 static NSString *libCellIdentifier = @"libCellIdentifier";
 static NSString *previewCellIdentifier = @"previewCellIdentifier";
 
-#define CELL_TAG_OFFSET 100
-#define MAGZINE_COVER_HEIGHT_IPHONE 415.0
 
 @interface KEBookLibraryTOCPageViewController()
 
@@ -64,19 +61,18 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
     
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
     // Dispose of any resources that can be recreated.
@@ -85,10 +81,10 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
 
 #pragma mark - adjust layout function
 
-- (void)updateLayoutForWebcontent{
+- (void)updateLayoutForWebcontent {
     
     [self.previewTableView removeFromSuperview];
-    [self.magazineIssueName mas_updateConstraints:^(MASConstraintMaker *make){
+    [self.magazineIssueName mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo( self.navigationView.mas_bottom ).with.offset(0);
     }];
     
@@ -225,7 +221,6 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
         KCBookArticle *article = self.bookItem.articleArray[indexPath.row];
         
         NSAttributedString *attString;
-        //NSAttributedString *descriptionString;
         CGFloat descriptionWidth = 0;
         
         if (DEVICE_IS_IPAD) {
@@ -236,12 +231,7 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
         }
         else {
             descriptionWidth = cell.frame.size.width - 104;
-            if( DEVICE_IS_IOS9_OR_LATER ){
-                attString = [KETextUtil attributedStringWithColor:[KEColor konoGrayPressed] withFontSize:15 withLineSpacing:8.0  withText:article.articleTitle];
-            }
-            else{
-                attString = [KETextUtil attributedStringWithColor:[KEColor konoGrayPressed] withFontSize:16 withLineSpacing:6.0  withText:article.articleTitle];
-            }
+            attString = [KETextUtil attributedStringWithColor:[KEColor konoGrayPressed] withFontSize:15 withLineSpacing:8.0  withText:article.articleTitle];
         }
         
         CGSize size = CGSizeMake(0, 0);
@@ -293,14 +283,10 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
             cell.articleReadModeTag.hidden = YES;
         }
         
-        cell.tag = CELL_TAG_OFFSET + indexPath.row;
         
         BOOL hasMultiMedia = article.isHasAudio || article.isHasVideo;
         
-        
         [cell setupDescriptionWithMultiMedia:hasMultiMedia hasTranslation:NO];
-        
-        //[cell setupDescriptionWithMultiMedia:hasMultiMedia hasTranslation:article.isHasTranslation];
         
         return (UITableViewCell*)cell;
     }
@@ -338,7 +324,7 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-        [self openArticleAtIndex:indexPath.row];
+    [self openArticleAtIndex:indexPath.row];
     
 }
 
@@ -394,8 +380,6 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
     NSDictionary *clickArticleInfo = [[NSDictionary alloc] initWithObjectsAndKeys:
                                       article,@"article",
                                       magazineIdxPath,@"pageIndexPath",
-                                      self.baseViewController,@"baseViewController",
-                                      @(YES),@"isThumbnailClick",
                                       nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"KEMagazinePageChange" object:nil userInfo:clickArticleInfo];
@@ -412,15 +396,9 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
     NSInteger pageIdx = article.beginAt - 1;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:pageIdx inSection:0];
     
-    if( self.baseViewController == nil ){
-        self.baseViewController = self;
-    }
-    
     NSDictionary *clickArticleInfo = [[NSDictionary alloc]initWithObjectsAndKeys:
                                       article,@"article",
                                       indexPath,@"pageIndexPath",
-                                      self.baseViewController,@"baseViewController",
-                                      @(NO),@"isThumbnailClick",
                                       nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"KEMagazinePageChange" object:nil userInfo:clickArticleInfo];
@@ -450,9 +428,6 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
         
         KEBookLibraryDetailPageInformationViewController *vc = (KEBookLibraryDetailPageInformationViewController*)presentedFSViewController;
         
-        //vc.titleLabel.text = [NSString stringWithFormat:@"%@ %@",self.magazineItem.magazineName,self.magazineItem.issue];
-        
-        //vc.descriptionLabel.attributedText =  [KETextUtil magazineInfoDescription:self.magazineItem.magazineDescription];
         [vc initDisplayContent:[NSString stringWithFormat:@"%@ %@",self.bookItem.name,self.bookItem.issue] withMagazineInfo:[KETextUtil magazineInfoDescription:self.bookItem.bookDescription]];
     };
     
@@ -493,10 +468,9 @@ static NSString *previewCellIdentifier = @"previewCellIdentifier";
     };
     
     [self presentFormSheetController:formSheet animated:YES completionHandler:^(MZFormSheetController *formSheetController) {
-        NSLog(@"form sheet complete!");
+
         KEBookLibraryDetailPageInformationViewController *vc = (KEBookLibraryDetailPageInformationViewController *)(((UINavigationController *)formSheetController.presentedFSViewController).visibleViewController);
-        
-        //vc.titleLabel.text = [NSString stringWithFormat:@"%@ %@",self.magazineItem.magazineName,self.magazineItem.issue];
+
         [vc initDisplayContent:[NSString stringWithFormat:@"%@ %@",self.bookItem.name,self.bookItem.issue] withMagazineInfo:[KETextUtil magazineInfoDescription:self.bookItem.bookDescription]];
 
     }];

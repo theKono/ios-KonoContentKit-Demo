@@ -11,17 +11,6 @@
 @interface KETextUtil : NSObject
 
 
-+ (NSAttributedString*)quote:(NSString*)quote;
-
-+ (NSAttributedString*)socialDescription:(NSString*)message;
-
-+ (NSAttributedString*)notificationDescription:(NSString*)message;
-
-+ (NSAttributedString*)commentMessage:(NSString*)message;
-
-
-+ (NSAttributedString*)promotionString:(NSString*)promotion;
-
 + (NSAttributedString*)magazineInfoDescription:(NSString*)infoString;
 
 + (NSAttributedString*)attributedStringWithColor:(UIColor*)color withFontSize:(float)size withText:(NSString*)text;

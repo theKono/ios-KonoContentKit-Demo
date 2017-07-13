@@ -50,8 +50,6 @@ typedef enum KEArticleReadMode : NSInteger{
 
 @property (nonatomic)           BOOL                isNeedShowFlipIndicator;
 
-@property (nonatomic, strong)   NSArray            *previousTrackingArticleArray;
-
 @property (nonatomic, strong)   WYPopoverController *popoverController;
 
 @property (weak, nonatomic) IBOutlet UIImageView *leftFlipIndicator;

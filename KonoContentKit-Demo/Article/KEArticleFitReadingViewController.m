@@ -70,10 +70,6 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
     
     [self initDefaultLayout];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(articleChange:)
-                                                 name:@"KEMagazinePageChange"
-                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -139,22 +135,6 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
     self.fitReadingView.delegate = self;
     [self.fitReadingView setBackgroundColor:[KEColor konoBackgroundHighlightGray]];
     
-//    if (self.bookItem.isHasTranslation) {
-//        self.translationSwitchButton = [[UIButton alloc] initWithFrame:CGRectMake(10, -52, 52, 52)];
-//        
-//        UIImage *image = [UIImage imageNamed:@"btn_translation_ch_normal"];
-//        UIImage *highlightedImage = [UIImage imageNamed:@"btn_translation_ch_pressed"];
-//        if (self.articleItem.showTranslation) {
-//            image = [UIImage imageNamed:@"btn_translation_jp_normal"];
-//            highlightedImage = [UIImage imageNamed:@"btn_translation_jp_pressed"];
-//        }
-//        [self.translationSwitchButton setImage:image forState:UIControlStateNormal];
-//        [self.translationSwitchButton setImage:highlightedImage forState:UIControlStateHighlighted];
-//        
-//        [self.translationSwitchButton addTarget:self action:@selector(translationSwitchButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-//        
-//        [self.view addSubview:self.translationSwitchButton];
-//    }
     
 }
 
@@ -176,10 +156,6 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
     
     self.isToolBarShow = YES;
     
-    if (!self.baseViewController) {
-        self.baseViewController = self;
-    }
-    
 }
 
 - (void)removePropertyRef {
@@ -197,60 +173,9 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
     self.webViewLoadCompleteBlock = nil;
     self.bookItem = nil;
     self.articleItem = nil;
-    self.baseViewController = nil;
     self.articlesArray = nil;
     self.fitReadingView.delegate = nil;
     self.fitReadingView.dataSource = nil;
-    
-}
-
-# pragma mark - TOC article selected notification
-
-- (void)articleChange:(NSNotification*)notification{
-    
-    NSDictionary *receiveInfo = [notification userInfo];
-    
-    if( self.baseViewController != nil && self.baseViewController == [receiveInfo objectForKey:@"baseViewController"] ){
-    
-    
-        self.articleItem = [receiveInfo objectForKey:@"article"];
-        if( [self.articlesArray count] > 1 ){
-            //webContent
-            NSInteger articleIndex = [self getArticleIndexInMagazine:self.articleItem.articleID];
-            
-            if( articleIndex != 0){
-                [self.fitReadingView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:articleIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-            }
-            else{
-                
-                for( KEFitReadingViewCell *cell in [self.fitReadingView visibleCells] ) {
-                    
-                    cell.isLoadComplete = NO;
-                }
-                
-                [self.fitReadingView reloadData];
-            }
-        }
-        else{
-            [[self presentingViewController]  dismissViewControllerAnimated:YES completion:^{
-                [self removePropertyRef];
-            }];
-            
-            /* fitReading tool view, keep in fit-reading view
-            if( self.articleItem.isHasFitreading && NO == [[receiveInfo objectForKey:@"isThumbnailClick"] boolValue] ){
-                self.tocArray = @[ self.articleItem ];
-                [self.fitReadingView reloadData];
-            }
-            else{
-                
-                [[self presentingViewController]  dismissViewControllerAnimated:YES completion:^{
-                    [self removePropertyRef];
-                }];
-            }*/
-            
-        }
-        
-    }
     
 }
 
@@ -546,12 +471,6 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
     cell.webView.scrollView.delegate = self;
     cell.webView.articleDelegate = self;
     
-    if (!DEVICE_IS_IOS8_OR_LATER) {
-        [cell loadFitreadingArticleWithComplete:^{
-            
-        }];
-    }
-    
     return (UICollectionViewCell*)cell;
 }
 
@@ -693,7 +612,6 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
 
 - (IBAction)toolBtnPressed:(id)sender {
     
-    
     if( DEVICE_IS_IPAD ){
         [self showiPadToolMenu:0 isUserLiked:NO];
     }
@@ -704,53 +622,12 @@ static CGFloat KEFITREADING_CLOSE_GESTURE_OFFSET = -100;
     
 }
 
-- (IBAction)tocBtnPressed:(id)sender {
-    
-    NSInteger articleIndex = [self getArticleIndexInMagazine:self.articleItem.articleID];
-    NSInteger pageIndex = 0;
-    
-    pageIndex = self.articleItem.beginAt - 1;
-    
-    KEBookLibraryTOCPageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"KEBookLibraryTOCPageViewController"];
-    
-    vc.baseViewController = self;
-    
-    vc.bookItem = self.bookItem;
-    vc.targetArticleIndex = articleIndex;
-    vc.targetPageIndex = pageIndex;
-    
-    [self.navigationController pushViewController:vc animated:YES];
-    
-}
-
 - (IBAction)backBtnPressed:(id)sender {
-    
     
     [self dismissFitreadingView];
     
 }
 
-
-- (void)translationSwitchButtonPressed {
-    
-//    self.articleItem.showTranslation = !self.articleItem.showTranslation;
-//    
-//    UIImage *image = [UIImage imageNamed:@"btn_translation_ch_normal"];
-//    UIImage *highlightedImage = [UIImage imageNamed:@"btn_translation_ch_pressed"];
-//    if (self.articleItem.showTranslation) {
-//        image = [UIImage imageNamed:@"btn_translation_jp_normal"];
-//        highlightedImage = [UIImage imageNamed:@"btn_translation_jp_pressed"];
-//    }
-//    [self.translationSwitchButton setImage:image forState:UIControlStateNormal];
-//    [self.translationSwitchButton setImage:highlightedImage forState:UIControlStateHighlighted];
-//    
-//    for( KEFitReadingViewCell *cell in [self.fitReadingView visibleCells] ) {
-//        
-//        cell.isLoadComplete = NO;
-//    }
-//    
-//    [self.fitReadingView reloadData];
-}
 
 
 @end

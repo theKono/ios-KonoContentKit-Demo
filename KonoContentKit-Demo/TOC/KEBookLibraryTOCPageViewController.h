@@ -19,8 +19,6 @@
 
 @property (nonatomic, strong) KCBook *bookItem;
 
-@property (nonatomic, strong) UIViewController *baseViewController;
-
 @property (nonatomic) NSInteger targetArticleIndex;
 
 @property (nonatomic) NSInteger targetPageIndex;

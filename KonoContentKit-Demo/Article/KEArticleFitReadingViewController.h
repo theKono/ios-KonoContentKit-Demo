@@ -26,8 +26,6 @@
 
 @property (nonatomic, strong)       NSString            *articleSource;
 
-@property (nonatomic, strong)       UIViewController    *baseViewController;
-
 @property (nonatomic, copy) void (^webViewLoadCompleteBlock)(void);
 
 @property (weak, nonatomic) IBOutlet UICollectionView *fitReadingView;

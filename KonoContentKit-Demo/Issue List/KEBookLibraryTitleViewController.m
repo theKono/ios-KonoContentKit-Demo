@@ -16,7 +16,6 @@
 #import <MZFormSheetController.h>
 #import <MBProgressHUD.h>
 #import <PINRemoteImage/PINImageView+PINRemoteImage.h>
-#import <Masonry.h>
 
 #define HEIGHT_FOR_CELL 240.0
 #define HEIGHT_FOR_CELL_IPAD 402.0

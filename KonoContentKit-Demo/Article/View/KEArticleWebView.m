@@ -7,8 +7,6 @@
 //
 
 #import "KEArticleWebView.h"
-#import <Masonry.h>
-
 
 
 @implementation KEArticleWebView
@@ -29,16 +27,6 @@
 - (void)drawRect:(CGRect)rect{
     
     [super drawRect:rect];
-    
-    /* add action to user selection menu
-    UIMenuItem *quoteAction = [[UIMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"share_article_with_quote_str",@"InfoPlist",nil) action:@selector(openShareInterfaceWithQuote)];
-    UIMenuItem *konogramAction = [[UIMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"share_konogram_str",@"InfoPlist",nil) action:@selector(openKonogramInterface)];
-    
-    UIMenuController *menu = [UIMenuController sharedMenuController];
-    
-    menu.menuItems = @[quoteAction, konogramAction ];
-    [menu update];
-    */
     
     if( self.tapGestureRecognizer == nil ){
         self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userDidTap)];
@@ -68,38 +56,7 @@
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
 
-    /* lock the context menu */
-    if( !self.isContextMenuShown ){
-        return NO;
-    }
-    
-    if(action == @selector(openShareInterfaceWithQuote) || action == @selector(openKonogramInterface)){
-        return YES;
-    }else{
-        return NO;
-    }
-    
-}
-
-- (void)openShareInterfaceWithQuote{
-    NSString *selection = [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
-    
-    if( ![selection isEqualToString:@""] ){
-        [self.articleDelegate openShareInterfaceWithQuoteWithQuote:selection];
-    }
-    
-}
-
-- (void)openKonogramInterface{
-    
-    NSString *selection = [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
-
-    if( ![selection isEqualToString:@""] ){
-        
-        [self.articleDelegate openKonogramEditingInterfaceWithQuote:selection];
-        
-    }
-    
+    return NO;
 }
 
 - (void)layoutSubviews{

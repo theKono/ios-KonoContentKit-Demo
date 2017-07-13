@@ -72,23 +72,15 @@ typedef enum KELandscapePlacement : NSUInteger{
 // data source related property
 @property (nonatomic, strong) KCBookArticle   *articleItem;
 
-@property (nonatomic, strong) NSMutableSet    *articleLockedSet;
-
-@property (nonatomic, strong) NSArray         *previousTrackingArticleArray;
-
 @property (nonatomic, strong) NSMutableArray  *evenFirstMergePageArray;
 
 @property (nonatomic, strong) NSMutableArray  *oddFirstMergePageArray;
 
 @property (nonatomic, strong) KCBook          *bookItem;
 
-@property (nonatomic, strong) UIViewController *baseViewController;
-
 @property (nonatomic) NSInteger basePageIndex;
 
 @property (nonatomic) NSInteger currentScreenIndex;
-
-@property (nonatomic) BOOL isWebviewInsideButtonActing;
 
 @property (nonatomic) BOOL isEvenPageAsFirstPage;
 

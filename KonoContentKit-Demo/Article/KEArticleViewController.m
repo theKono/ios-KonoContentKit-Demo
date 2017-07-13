@@ -191,7 +191,6 @@
             KEArticleLandscapeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"KEArticleLandscapeViewController"];
 
             vc.transitioningDelegate = self;
-            vc.baseViewController = self;
             vc.bookItem = self.bookItem;
             vc.articleItem = pageArticleSource;
             vc.basePageIndex = self.currentMagazineIndex;
@@ -210,20 +209,20 @@
 - (void)pageChange:(NSNotification*)notification {
     
     NSDictionary *receiveInfo = [notification userInfo];
-    if( self == [receiveInfo objectForKey:@"baseViewController"]){
-        NSInteger magazineIdx = ((NSIndexPath *)([receiveInfo objectForKey:@"pageIndexPath"])).row;
-        NSInteger tableIdx = [self getTableViewIndex:magazineIdx];
-        
-        self.currentMagazineIndex = magazineIdx;
-        
-        [self updateFitReadingModeStatus];
-        
-        [self.articlePDFView.tableView beginUpdates];
-        [self.articlePDFView.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:tableIdx inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-        [self.articlePDFView.tableView endUpdates];
-        [self.articlePDFView.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:tableIdx inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-        self.isNeedShowFlipIndicator = YES;
-    }
+    
+    NSInteger magazineIdx = ((NSIndexPath *)([receiveInfo objectForKey:@"pageIndexPath"])).row;
+    NSInteger tableIdx = [self getTableViewIndex:magazineIdx];
+    
+    self.currentMagazineIndex = magazineIdx;
+    
+    [self updateFitReadingModeStatus];
+    
+    [self.articlePDFView.tableView beginUpdates];
+    [self.articlePDFView.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:tableIdx inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    [self.articlePDFView.tableView endUpdates];
+    [self.articlePDFView.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:tableIdx inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    self.isNeedShowFlipIndicator = YES;
+    
 }
 
 # pragma mark - magazine info datasource
@@ -468,7 +467,7 @@
 - (void)showArticlePDFView {
     
     CGFloat delayTime = 0.2;
-    if( DEVICE_IS_IPHONE_4_OR_LESS || DEVICE_IS_IPHONE_5 || DEVICE_IS_IPAD ){
+    if(  DEVICE_IS_IPHONE_5 || DEVICE_IS_IPAD ){
         delayTime = 0.5;
     }
     
@@ -777,8 +776,6 @@
     
     KEBookLibraryTOCPageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"KEBookLibraryTOCPageViewController"];
     
-    vc.baseViewController = self;
-    
     vc.bookItem = self.bookItem;
     vc.targetArticleIndex = articleIndex;
     vc.targetPageIndex = self.currentMagazineIndex;
@@ -830,7 +827,6 @@
     __weak KEArticleFitReadingViewController *weakVC = vc;
     vc.articleItem = article;
     vc.bookItem = self.bookItem;
-    vc.baseViewController = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     

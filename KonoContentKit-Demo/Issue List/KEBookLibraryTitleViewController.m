@@ -7,13 +7,10 @@
 //
 #import "KEArticleViewController.h"
 #import "KEBookLibraryTitleViewController.h"
-#import "KELibraryBookCell.h"
 #import "KEColor.h"
+#import "KELibraryBookCell.h"
 #import "KETextUtil.h"
 
-#import "KEBookLibraryItemCell.h"
-
-#import <MZFormSheetController.h>
 #import <MBProgressHUD.h>
 #import <PINRemoteImage/PINImageView+PINRemoteImage.h>
 
@@ -34,7 +31,6 @@ static NSString *horizonCellIdentifier = @"horizonCellIdentifier";
 @property (nonatomic, strong) NSArray *categoryYearArray;
 @property (nonatomic, strong) NSMutableDictionary *booksDictionary;
 @property (nonatomic, strong) KELibraryTitleHeaderView *titleDescriptionView;
-    
 
 
 @end
@@ -63,41 +59,9 @@ static NSString *horizonCellIdentifier = @"horizonCellIdentifier";
     self.booksDictionary = [[NSMutableDictionary alloc] init];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
-    __weak KEBookLibraryTitleViewController *weakSelf = self;
     
     [self getTitleInformation];
-    
-    [[KCService contentManager] getAllYearsContainBooksForTitleID:KonoContentKitDemoMagazine complete:^(NSArray *yearArray) {
-        
-        self.categoryYearArray = [NSMutableArray arrayWithArray:yearArray];
-        
-        for( NSDictionary* titleYear in yearArray ) {
-            
-            NSString *year;
-            year = [[titleYear objectForKey:@"year"] stringValue];
-
-            NSMutableArray *booksArray = [self.booksDictionary objectForKey:[[titleYear objectForKey:@"year"] stringValue]];
-            
-            if( booksArray == nil ){
-                
-                [[KCService contentManager] getAllBooksForTitleID:KonoContentKitDemoMagazine forYear:year complete:^(NSArray *bookArray) {
-                    
-                    [self.booksDictionary setObject:bookArray forKey:year];
-                    [weakSelf.tableView reloadData];
-                    
-                } fail:^(NSError *error) {
-                    
-                }];
-            }
-        }
-        
-        [weakSelf.tableView reloadData];
-        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
-        
-    } fail:^(NSError *error) {
-        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
-    }];
+    [self getTitleBooksDictionary];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -117,6 +81,44 @@ static NSString *horizonCellIdentifier = @"horizonCellIdentifier";
                                                     object:nil];
     self.tableView.delegate = nil;
     self.tableView.dataSource = nil;
+    
+}
+
+- (void)getTitleBooksDictionary {
+    
+    __weak KEBookLibraryTitleViewController *weakSelf = self;
+    
+    [[KCService contentManager] getAllYearsContainBooksForTitleID:KonoContentKitDemoMagazine complete:^(NSArray *yearArray) {
+        
+        self.categoryYearArray = [NSMutableArray arrayWithArray:yearArray];
+        
+        for( NSDictionary* titleYear in yearArray ) {
+            
+            NSString *year;
+            year = [[titleYear objectForKey:@"year"] stringValue];
+            
+            NSMutableArray *booksArray = [self.booksDictionary objectForKey:[[titleYear objectForKey:@"year"] stringValue]];
+            
+            if( booksArray == nil ) {
+                
+                [[KCService contentManager] getAllBooksForTitleID:KonoContentKitDemoMagazine forYear:year complete:^(NSArray *bookArray) {
+                    
+                    [self.booksDictionary setObject:bookArray forKey:year];
+                    [weakSelf.tableView reloadData];
+                    
+                } fail:^(NSError *error) {
+                    
+                }];
+            }
+        }
+        
+        [weakSelf.tableView reloadData];
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        
+    } fail:^(NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+    }];
+
     
 }
 
@@ -382,7 +384,6 @@ static NSString *horizonCellIdentifier = @"horizonCellIdentifier";
     
     [self.navigationController pushViewController:articleViewController animated:YES];
 }
-
 
 
 - (void)didReceiveMemoryWarning {

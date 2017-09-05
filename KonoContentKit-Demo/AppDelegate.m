@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "KEArticleLandscapeViewController.h"
+#import "KonoViewerKit.h"
 
 @interface AppDelegate ()
 

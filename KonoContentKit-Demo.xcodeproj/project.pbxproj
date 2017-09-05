@@ -58,12 +58,13 @@
 		4DDF74C91F02360F00A719B5 /* landscape.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74C81F02360F00A719B5 /* landscape.html */; };
 		A134573453A4AF4E0E370D0A /* libPods-KonoContentKit-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */; };
 		CE7E1B3FA7D568FDE2FE9902 /* libPods-KonoContentKit-DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */; };
-		E8AB50201F0E23950008977B /* KEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AB501F1F0E23950008977B /* KEMainViewController.m */; };
-		E8AB50231F0E31EA0008977B /* KEAPIResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AB50221F0E31EA0008977B /* KEAPIResultViewController.m */; };
 		E8E9011D1F386679006EDCF5 /* KENewArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */; };
 		E8E901561F5E63EA006EDCF5 /* KonoViewerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E901541F5E63EA006EDCF5 /* KonoViewerDemoViewController.m */; };
 		E8E901571F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E901551F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib */; };
 		E8E9015B1F5E64F9006EDCF5 /* KENewFitReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015A1F5E64F9006EDCF5 /* KENewFitReadingViewController.m */; };
+		E8E901601F5E8C9F006EDCF5 /* KEAPIResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015D1F5E8C9F006EDCF5 /* KEAPIResultViewController.m */; };
+		E8E901611F5E8C9F006EDCF5 /* KEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015F1F5E8C9F006EDCF5 /* KEMainViewController.m */; };
+		E8E901631F5E9070006EDCF5 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = E8E901621F5E9070006EDCF5 /* dist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,10 +165,6 @@
 		B2FE35BE0EF8C67CA6184D03 /* Pods-KonoContentKit-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-Demo/Pods-KonoContentKit-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KonoContentKit-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KonoContentKit-DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8AB501E1F0E23950008977B /* KEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEMainViewController.h; sourceTree = "<group>"; };
-		E8AB501F1F0E23950008977B /* KEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEMainViewController.m; sourceTree = "<group>"; };
-		E8AB50211F0E31E90008977B /* KEAPIResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAPIResultViewController.h; sourceTree = "<group>"; };
-		E8AB50221F0E31EA0008977B /* KEAPIResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEAPIResultViewController.m; sourceTree = "<group>"; }
 		E8E9011B1F386679006EDCF5 /* KENewArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KENewArticleViewController.h; path = Article/KENewArticleViewController.h; sourceTree = "<group>"; };
 		E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KENewArticleViewController.m; path = Article/KENewArticleViewController.m; sourceTree = "<group>"; };
 		E8E901531F5E63EA006EDCF5 /* KonoViewerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonoViewerDemoViewController.h; sourceTree = "<group>"; };
@@ -175,6 +172,11 @@
 		E8E901551F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KonoViewerDemoViewController.xib; sourceTree = "<group>"; };
 		E8E901591F5E64F9006EDCF5 /* KENewFitReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENewFitReadingViewController.h; sourceTree = "<group>"; };
 		E8E9015A1F5E64F9006EDCF5 /* KENewFitReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENewFitReadingViewController.m; sourceTree = "<group>"; };
+		E8E9015C1F5E8C9F006EDCF5 /* KEAPIResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAPIResultViewController.h; sourceTree = "<group>"; };
+		E8E9015D1F5E8C9F006EDCF5 /* KEAPIResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEAPIResultViewController.m; sourceTree = "<group>"; };
+		E8E9015E1F5E8C9F006EDCF5 /* KEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEMainViewController.h; sourceTree = "<group>"; };
+		E8E9015F1F5E8C9F006EDCF5 /* KEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEMainViewController.m; sourceTree = "<group>"; };
+		E8E901621F5E9070006EDCF5 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		FC87393EEBA13224B3A6BDA7 /* Pods-KonoContentKit-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-DemoTests/Pods-KonoContentKit-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,20 +246,20 @@
 		4D8B22D51EEFD3FC00B82050 /* KonoContentKit-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E8E9015C1F5E8C9F006EDCF5 /* KEAPIResultViewController.h */,
+				E8E9015D1F5E8C9F006EDCF5 /* KEAPIResultViewController.m */,
+				E8E9015E1F5E8C9F006EDCF5 /* KEMainViewController.h */,
+				E8E9015F1F5E8C9F006EDCF5 /* KEMainViewController.m */,
 				E8E901581F5E63FC006EDCF5 /* KonoViewerDemo */,
 				4D8B22FE1EF0F27700B82050 /* Util */,
-				4D8B22FB1EF0F25800B82050 /* Article */,
-				4D8B22FC1EF0F25800B82050 /* Issue List */,
 				4D34BA1E1EFA1BC50063E2C0 /* Sandwich */,
+				4D8B22FB1EF0F25800B82050 /* Article */,
 				4DDF74451EFCCC7200A719B5 /* TOC */,
-				4D8B22FE1EF0F27700B82050 /* Util */,
-				E8AB50241F0E31F90008977B /* RawData */,
+				4D8B22FC1EF0F25800B82050 /* Issue List */,
 				4D8B22D91EEFD3FC00B82050 /* AppDelegate.h */,
 				4D8B22DA1EEFD3FC00B82050 /* AppDelegate.m */,
 				4D8B230C1EF0F43C00B82050 /* Kono-Prefix.pch */,
 				4D8B22DF1EEFD3FC00B82050 /* Main.storyboard */,
-				E8AB501E1F0E23950008977B /* KEMainViewController.h */,
-				E8AB501F1F0E23950008977B /* KEMainViewController.m */,
 				4D8B22E21EEFD3FC00B82050 /* Assets.xcassets */,
 				4D8B22E41EEFD3FC00B82050 /* LaunchScreen.storyboard */,
 				4D8B22E71EEFD3FC00B82050 /* Info.plist */,
@@ -286,6 +288,7 @@
 		4D8B22FB1EF0F25800B82050 /* Article */ = {
 			isa = PBXGroup;
 			children = (
+				E8E901621F5E9070006EDCF5 /* dist */,
 				4DDF74C81F02360F00A719B5 /* landscape.html */,
 				4D34B9F71EFA1AD30063E2C0 /* KEArticleViewController.h */,
 				4D34B9F81EFA1AD30063E2C0 /* KEArticleViewController.m */,
@@ -409,13 +412,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E8AB50241F0E31F90008977B /* RawData */ = {
-			isa = PBXGroup;
-			children = (
-				E8AB50211F0E31E90008977B /* KEAPIResultViewController.h */,
-				E8AB50221F0E31EA0008977B /* KEAPIResultViewController.m */,
-			);
-			name = RawData;
 		E8E901581F5E63FC006EDCF5 /* KonoViewerDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +530,7 @@
 				4DDF74611EFCCC7200A719B5 /* KEBookLibraryItemCell~ipad.xib in Resources */,
 				4D8B22E61EEFD3FC00B82050 /* LaunchScreen.storyboard in Resources */,
 				4D8B22E31EEFD3FC00B82050 /* Assets.xcassets in Resources */,
+				E8E901631F5E9070006EDCF5 /* dist in Resources */,
 				4D8B22E11EEFD3FC00B82050 /* Main.storyboard in Resources */,
 				E8E901571F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib in Resources */,
 				4D8B231C1EF114F800B82050 /* KELibraryBookCell~iphone.xib in Resources */,
@@ -654,7 +651,6 @@
 				4DDF74791F00C5BA00A719B5 /* KEArticleSelectionMenuTableViewCell.m in Sources */,
 				4D34BA251EFA1BC50063E2C0 /* KEFatPageWebView.m in Sources */,
 				4DDF74711F00C56B00A719B5 /* KEArticleFitReadingViewController.m in Sources */,
-				E8AB50201F0E23950008977B /* KEMainViewController.m in Sources */,
 				4DDF74C41F021D0700A719B5 /* KEArticleLandscapeViewController.m in Sources */,
 				4D8B23251EF11B0600B82050 /* KETextUtil.m in Sources */,
 				4DDF745B1EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m in Sources */,
@@ -676,13 +672,14 @@
 				4D8B230F1EF0FA1400B82050 /* KEBookLibraryTitleViewController.m in Sources */,
 				4DDF74851F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.m in Sources */,
 				4D8B22D81EEFD3FC00B82050 /* main.m in Sources */,
+				E8E901611F5E8C9F006EDCF5 /* KEMainViewController.m in Sources */,
 				E8E9011D1F386679006EDCF5 /* KENewArticleViewController.m in Sources */,
 				4DDF74831F00C5CD00A719B5 /* KEArticleToolFontSizeViewController.m in Sources */,
 				4D34B9F91EFA1AD30063E2C0 /* KEArticleViewController.m in Sources */,
 				E8E9015B1F5E64F9006EDCF5 /* KENewFitReadingViewController.m in Sources */,
 				4D34BA271EFA1BC50063E2C0 /* NESandwichView.m in Sources */,
-				E8AB50231F0E31EA0008977B /* KEAPIResultViewController.m in Sources */,
 				4D34BA2A1EFA1D640063E2C0 /* KERotationPresentAnimation.m in Sources */,
+				E8E901601F5E8C9F006EDCF5 /* KEAPIResultViewController.m in Sources */,
 				4DDF747B1F00C5BA00A719B5 /* KEArticleSelectionMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

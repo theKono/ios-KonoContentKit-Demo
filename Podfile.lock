@@ -1,64 +1,55 @@
 PODS:
   - FLAnimatedImage (1.0.12)
+  - KonoViewerKit (0.2)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MZAppearance (1.1.6)
   - MZFormSheetController (1.4.1):
     - MZAppearance (~> 1.1.1)
-  - PINCache (3.0.1-beta.4):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
-    - PINCache/Core (= 3.0.1-beta.4)
-  - PINCache/Arc-exception-safe (3.0.1-beta.4):
-    - PINCache/Core
-  - PINCache/Core (3.0.1-beta.4):
-    - PINOperation (= 1.0.3)
-  - PINOperation (1.0.3)
-  - PINRemoteImage (3.0.0-beta.10):
-    - PINRemoteImage/FLAnimatedImage (= 3.0.0-beta.10)
-    - PINRemoteImage/PINCache (= 3.0.0-beta.10)
-  - PINRemoteImage/Core (3.0.0-beta.10):
-    - PINOperation
-  - PINRemoteImage/FLAnimatedImage (3.0.0-beta.10):
+  - PINCache (2.3)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
-    - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0-beta.10):
-    - PINCache (= 3.0.1-beta.4)
     - PINRemoteImage/Core
   - WYPopoverController (0.3.9)
 
 DEPENDENCIES:
+  - KonoViewerKit (from `https://github.com/theKono/ios-KonoViewer.git`, branch `development`)
   - Masonry
   - MBProgressHUD (~> 0.8)
   - MZFormSheetController (~> 1.4.0)
-  - PINRemoteImage (from `https://github.com/pinterest/PINRemoteImage.git`, branch `master`)
+  - PINRemoteImage
   - WYPopoverController (from `https://github.com/sammcewan/WYPopoverController.git`)
 
 EXTERNAL SOURCES:
-  PINRemoteImage:
-    :branch: master
-    :git: https://github.com/pinterest/PINRemoteImage.git
+  KonoViewerKit:
+    :branch: development
+    :git: https://github.com/theKono/ios-KonoViewer.git
   WYPopoverController:
     :git: https://github.com/sammcewan/WYPopoverController.git
 
 CHECKOUT OPTIONS:
-  PINRemoteImage:
-    :commit: 9935c2df0c92731c153d7f75f7ed3e47441865d1
-    :git: https://github.com/pinterest/PINRemoteImage.git
+  KonoViewerKit:
+    :commit: 176abab62a04fe3e9d56a773988b81b089db92f8
+    :git: https://github.com/theKono/ios-KonoViewer.git
   WYPopoverController:
     :commit: 9b8011bd95bd95f6fca6a0afa78965fbf645a062
     :git: https://github.com/sammcewan/WYPopoverController.git
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  KonoViewerKit: 2b77853b3e91146bcbc0fa342563e1a689958521
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetController: 12215e9a7641d74f1a80fa56ef1b40607c423a0c
-  PINCache: a89c8f609232afac77128557bd12c861844423d7
-  PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
-  PINRemoteImage: 3782605733d65798ab3919e1019ce48e43171126
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
 
-PODFILE CHECKSUM: e5c6d13a5d7cc8fa4f003d286797ca70194cd790
+PODFILE CHECKSUM: cdc0dfb8eb9c65111d77803222c1c8a49eae04e2
 
 COCOAPODS: 1.0.1

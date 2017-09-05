@@ -10,8 +10,8 @@
 
 typedef enum KETabItemIndex : NSUInteger {
     
-    KETabItemView = 0,
-    KETabItemRawData = 1,
+    KETabItemContentKit = 0,
+    KETabItemViewerDemo = 1,
     
 } KETabItemIndex;
 

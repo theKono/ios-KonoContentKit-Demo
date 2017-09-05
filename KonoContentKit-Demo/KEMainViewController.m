@@ -7,6 +7,7 @@
 //
 
 #import "KEAPIResultViewController.h"
+#import "KonoViewerDemoViewController.h"
 #import "KEBookLibraryTitleViewController.h"
 #import "KEMainViewController.h"
 
@@ -32,14 +33,14 @@
 
 - (void)initTabBarViewController {
     
-    [self setViewControllers:@[[self getNavigationControllerForIndex:KETabItemView],
-                               [self getNavigationControllerForIndex:KETabItemRawData]]];
+    [self setViewControllers:@[[self getNavigationControllerForIndex:KETabItemContentKit],
+                               [self getNavigationControllerForIndex:KETabItemViewerDemo]]];
     
     NSArray *tabBarNormalImageArray, *tabBarSelectedImageArray , *tabBarTitleArray;
     
     tabBarNormalImageArray = @[@"btn_tab_menu_library_normal",@"btn_tab_menu_mykono_normal"];
     tabBarSelectedImageArray = @[@"btn_tab_menu_library_selected",@"btn_tab_menu_mykono_selected"];
-    tabBarTitleArray = @[@"View",@"Data"];
+    tabBarTitleArray = @[@"Content-Kit",@"Viewer-Demo"];
     
     for (int i=0 ; i< [tabBarTitleArray count] ; i++) {
         
@@ -63,7 +64,7 @@
         item.titlePositionAdjustment = UIOffsetMake(0, offset);
     }
     
-    [self setSelectedIndex:KETabItemView];
+    [self setSelectedIndex:KETabItemContentKit];
     [self.view layoutIfNeeded];
     
 }
@@ -74,13 +75,13 @@
     UINavigationController *tabItemViewController;
     
     switch (index) {
-        case KETabItemView: {
+        case KETabItemContentKit: {
             KEBookLibraryTitleViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KEBookLibraryTitleViewController"];
             tabItemViewController = [[UINavigationController alloc] initWithRootViewController:titleViewController];
             break;
         }
-        case KETabItemRawData: {
-            KEAPIResultViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KEAPIResultViewController"];
+        case KETabItemViewerDemo: {
+            KonoViewerDemoViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KEAPIResultViewController"];
             tabItemViewController = [[UINavigationController alloc] initWithRootViewController:titleViewController];
             break;
         }

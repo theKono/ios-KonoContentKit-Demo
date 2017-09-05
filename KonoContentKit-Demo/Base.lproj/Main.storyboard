@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HYU-gi-V8k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HYU-gi-V8k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="euX-S7-NKN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="711"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -272,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="804" y="-1086"/>
         </scene>
-        <!--Result View Controller-->
+        <!--Kono Viewer Demo View Controller-->
         <scene sceneID="wSU-jf-0eZ">
             <objects>
-                <viewController storyboardIdentifier="KEAPIResultViewController" id="Euf-M6-d0b" customClass="KEAPIResultViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KEAPIResultViewController" id="Euf-M6-d0b" customClass="KonoViewerDemoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5xd-VA-ZbV"/>
                         <viewControllerLayoutGuide type="bottom" id="biw-rf-Sh7"/>
@@ -284,20 +285,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEe-1a-QOA">
-                                <rect key="frame" x="143" y="335" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aes-l8-zkO">
+                                <rect key="frame" x="87.5" y="151" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="OIc-qc-tMl"/>
+                                    <constraint firstAttribute="height" constant="60" id="Vnw-Xw-9oQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Show PDF View">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPDFView:" destination="Euf-M6-d0b" eventType="touchUpInside" id="uBn-34-K60"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rK-jh-w6M">
+                                <rect key="frame" x="87.5" y="467" width="200" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Nix-de-n5h"/>
+                                    <constraint firstAttribute="height" constant="60" id="aC2-gx-Frx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Show Fit-Reading View">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFitReadingView:" destination="Euf-M6-d0b" eventType="touchUpInside" id="tEn-h0-hVv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo bookID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lab-8Z-2It">
+                                <rect key="frame" x="16" y="97" width="120" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="UZF-oG-Olc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo articleID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0R-Mc-0UR">
+                                <rect key="frame" x="16" y="413" width="120" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="gtc-1S-VJN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PLo-ax-738">
+                                <rect key="frame" x="136" y="105" width="229" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sDd-sQ-ICW">
+                                <rect key="frame" x="136" y="421" width="229" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.91372549020000005" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lab-8Z-2It" firstAttribute="centerY" secondItem="PLo-ax-738" secondAttribute="centerY" id="50Q-a7-tNv"/>
+                            <constraint firstItem="Aes-l8-zkO" firstAttribute="top" secondItem="PLo-ax-738" secondAttribute="bottom" constant="16" id="94a-s9-ZiC"/>
+                            <constraint firstItem="1rK-jh-w6M" firstAttribute="top" secondItem="sDd-sQ-ICW" secondAttribute="bottom" constant="16" id="9YT-UB-out"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Lab-8Z-2It" secondAttribute="leading" id="AD7-9u-Zin"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sDd-sQ-ICW" secondAttribute="trailing" constant="-6" id="Hei-xI-m9p"/>
+                            <constraint firstItem="Aes-l8-zkO" firstAttribute="centerX" secondItem="r8V-6N-GK1" secondAttribute="centerX" id="JX0-lX-wEq"/>
+                            <constraint firstItem="PLo-ax-738" firstAttribute="leading" secondItem="Lab-8Z-2It" secondAttribute="trailing" id="OyA-Ln-sYq"/>
+                            <constraint firstItem="biw-rf-Sh7" firstAttribute="top" secondItem="1rK-jh-w6M" secondAttribute="bottom" constant="140" id="XAO-Q0-rI6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PLo-ax-738" secondAttribute="trailing" constant="-6" id="brn-9T-0zK"/>
+                            <constraint firstItem="Aes-l8-zkO" firstAttribute="top" secondItem="Lab-8Z-2It" secondAttribute="bottom" constant="8" symbolic="YES" id="dv2-Fk-7Ox"/>
+                            <constraint firstItem="Lab-8Z-2It" firstAttribute="top" secondItem="5xd-VA-ZbV" secondAttribute="bottom" constant="77" id="e5n-QV-AbX"/>
+                            <constraint firstItem="sDd-sQ-ICW" firstAttribute="leading" secondItem="T0R-Mc-0UR" secondAttribute="trailing" id="eyl-hC-gGU"/>
+                            <constraint firstItem="1rK-jh-w6M" firstAttribute="top" secondItem="T0R-Mc-0UR" secondAttribute="bottom" constant="8" symbolic="YES" id="gJf-T2-lpk"/>
+                            <constraint firstItem="1rK-jh-w6M" firstAttribute="centerX" secondItem="r8V-6N-GK1" secondAttribute="centerX" id="gms-fy-LM7"/>
+                            <constraint firstItem="T0R-Mc-0UR" firstAttribute="leading" secondItem="r8V-6N-GK1" secondAttribute="leadingMargin" id="uUh-CP-iQ3"/>
+                            <constraint firstItem="T0R-Mc-0UR" firstAttribute="centerY" secondItem="sDd-sQ-ICW" secondAttribute="centerY" id="ud8-ec-Tzg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="articleIDTextField" destination="sDd-sQ-ICW" id="8vb-fw-tiW"/>
+                        <outlet property="bookIDTextField" destination="PLo-ax-738" id="Fpt-7g-Efl"/>
+                        <outlet property="showFitReadingBtn" destination="1rK-jh-w6M" id="U94-7N-JYc"/>
+                        <outlet property="showPDFBtn" destination="Aes-l8-zkO" id="WFu-yP-Xmc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0a-eV-mjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="-401"/>
+            <point key="canvasLocation" x="-620" y="-401.64917541229386"/>
         </scene>
         <!--Article Fit Reading View Controller-->
         <scene sceneID="dVy-NV-2y7">

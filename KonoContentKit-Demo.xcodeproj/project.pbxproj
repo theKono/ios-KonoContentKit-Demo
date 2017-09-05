@@ -60,7 +60,6 @@
 		CE7E1B3FA7D568FDE2FE9902 /* libPods-KonoContentKit-DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */; };
 		E8E9011D1F386679006EDCF5 /* KENewArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */; };
 		E8E901561F5E63EA006EDCF5 /* KonoViewerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E901541F5E63EA006EDCF5 /* KonoViewerDemoViewController.m */; };
-		E8E901571F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E901551F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib */; };
 		E8E9015B1F5E64F9006EDCF5 /* KENewFitReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015A1F5E64F9006EDCF5 /* KENewFitReadingViewController.m */; };
 		E8E901601F5E8C9F006EDCF5 /* KEAPIResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015D1F5E8C9F006EDCF5 /* KEAPIResultViewController.m */; };
 		E8E901611F5E8C9F006EDCF5 /* KEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015F1F5E8C9F006EDCF5 /* KEMainViewController.m */; };
@@ -169,7 +168,6 @@
 		E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KENewArticleViewController.m; path = Article/KENewArticleViewController.m; sourceTree = "<group>"; };
 		E8E901531F5E63EA006EDCF5 /* KonoViewerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonoViewerDemoViewController.h; sourceTree = "<group>"; };
 		E8E901541F5E63EA006EDCF5 /* KonoViewerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KonoViewerDemoViewController.m; sourceTree = "<group>"; };
-		E8E901551F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KonoViewerDemoViewController.xib; sourceTree = "<group>"; };
 		E8E901591F5E64F9006EDCF5 /* KENewFitReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KENewFitReadingViewController.h; sourceTree = "<group>"; };
 		E8E9015A1F5E64F9006EDCF5 /* KENewFitReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KENewFitReadingViewController.m; sourceTree = "<group>"; };
 		E8E9015C1F5E8C9F006EDCF5 /* KEAPIResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEAPIResultViewController.h; sourceTree = "<group>"; };
@@ -417,7 +415,6 @@
 			children = (
 				E8E901531F5E63EA006EDCF5 /* KonoViewerDemoViewController.h */,
 				E8E901541F5E63EA006EDCF5 /* KonoViewerDemoViewController.m */,
-				E8E901551F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib */,
 				E8E9011B1F386679006EDCF5 /* KENewArticleViewController.h */,
 				E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */,
 				E8E901591F5E64F9006EDCF5 /* KENewFitReadingViewController.h */,
@@ -532,7 +529,6 @@
 				4D8B22E31EEFD3FC00B82050 /* Assets.xcassets in Resources */,
 				E8E901631F5E9070006EDCF5 /* dist in Resources */,
 				4D8B22E11EEFD3FC00B82050 /* Main.storyboard in Resources */,
-				E8E901571F5E63EA006EDCF5 /* KonoViewerDemoViewController.xib in Resources */,
 				4D8B231C1EF114F800B82050 /* KELibraryBookCell~iphone.xib in Resources */,
 				4DDF74651EFCCC7200A719B5 /* KEBookLibraryTOCCell~iphone.xib in Resources */,
 				4DDF74861F00C5CD00A719B5 /* KEArticleToolMenuFontTableViewCell.xib in Resources */,

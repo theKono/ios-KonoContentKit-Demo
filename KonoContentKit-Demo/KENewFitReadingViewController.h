@@ -10,4 +10,8 @@
 
 @interface KENewFitReadingViewController : UIViewController
 
+@property (nonatomic, strong) KCBook *bookItem;
+@property (nonatomic, strong) KCBookArticle *articleItem;
+
+
 @end

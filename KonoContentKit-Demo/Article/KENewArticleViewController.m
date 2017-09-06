@@ -8,11 +8,12 @@
 
 #import "KENewArticleViewController.h"
 #import "KonoPDFView.h"
-#import "KonoFitreadingView.h"
+#import "KonoNavigationView.h"
 
-@interface KENewArticleViewController () <KonoPDFViewDelegate,KonoPDFViewDatasource>
+@interface KENewArticleViewController () <KonoPDFViewDelegate,KonoPDFViewDatasource, KonoNavigationViewDelegate>
 
 @property (nonatomic, strong) KonoPDFView *PDFViewer;
+@property (nonatomic, strong) KonoNavigationView *navigationView;
 
 @end
 
@@ -34,6 +35,10 @@
         make.bottom.equalTo( self.view.mas_bottom ).with.offset( 0 );
         
     }];
+    
+    self.navigationView = [KonoNavigationView defatulView];
+    self.navigationView.delegate = self;
+    [self.view addSubview:self.navigationView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,28 +50,27 @@
     
     [super viewWillAppear:animated];
     
-    //[self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     
 }
 
-- (void)viewDidLayoutSubviews {
-    
-    [super viewDidLayoutSubviews];
-    
-    
-}
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    
-    [self.PDFViewer initViewContainer];
+    [self.navigationView show];
+    [self.PDFViewer initViewContainerAtPageIdx:0];
     
 }
 
 #pragma mark - PDF Viewer datasource delegate
+
+- (BOOL)isLeftFlip {
+    return self.bookItem.isLeftFlip;
+}
+
 
 - (NSInteger)numberOfPages {
     
@@ -92,14 +96,42 @@
     return nil;
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - PDF view delegate function
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)PDFViewStartMoving {
+    [self.navigationView hide];
 }
-*/
+
+- (void)PDFViewTapped {
+    
+    if( self.navigationView.isDisplay ) {
+        [self.navigationView hide];
+    }
+    else {
+        [self.navigationView show];
+    }
+    
+}
+
+- (void)PDFViewZoomin {
+    
+    [self.navigationView hide];
+    
+}
+
+- (void)PDFViewZoomReset {
+    
+    [self.navigationView show];
+    
+}
+
+
+#pragma mark - navigation view delegate function
+
+- (void)backBtnPressed {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 @end

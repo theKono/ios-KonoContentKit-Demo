@@ -1,6 +1,6 @@
 PODS:
   - FLAnimatedImage (1.0.12)
-  - KonoViewerKit (0.2)
+  - KonoViewerKit (0.3)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MZAppearance (1.1.6)
@@ -17,7 +17,7 @@ PODS:
   - WYPopoverController (0.3.9)
 
 DEPENDENCIES:
-  - KonoViewerKit (from `https://github.com/theKono/ios-KonoViewer.git`, branch `development`)
+  - KonoViewerKit
   - Masonry
   - MBProgressHUD (~> 0.8)
   - MZFormSheetController (~> 1.4.0)
@@ -25,23 +25,17 @@ DEPENDENCIES:
   - WYPopoverController (from `https://github.com/sammcewan/WYPopoverController.git`)
 
 EXTERNAL SOURCES:
-  KonoViewerKit:
-    :branch: development
-    :git: https://github.com/theKono/ios-KonoViewer.git
   WYPopoverController:
     :git: https://github.com/sammcewan/WYPopoverController.git
 
 CHECKOUT OPTIONS:
-  KonoViewerKit:
-    :commit: 176abab62a04fe3e9d56a773988b81b089db92f8
-    :git: https://github.com/theKono/ios-KonoViewer.git
   WYPopoverController:
     :commit: 9b8011bd95bd95f6fca6a0afa78965fbf645a062
     :git: https://github.com/sammcewan/WYPopoverController.git
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  KonoViewerKit: 2b77853b3e91146bcbc0fa342563e1a689958521
+  KonoViewerKit: 35ab5679eeddf7d06c676c07ac66a0e75ae3d015
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
@@ -50,6 +44,6 @@ SPEC CHECKSUMS:
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
 
-PODFILE CHECKSUM: cdc0dfb8eb9c65111d77803222c1c8a49eae04e2
+PODFILE CHECKSUM: 84607c5d718458fba52d1f552fa315ab7dfbcbd5
 
 COCOAPODS: 1.0.1

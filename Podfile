@@ -13,7 +13,7 @@ target 'KonoContentKit-Demo' do
     pod 'MZFormSheetController', '~> 1.4.0'
     pod 'WYPopoverController', :git => 'https://github.com/sammcewan/WYPopoverController.git'
     pod 'Masonry'
-    pod 'KonoViewerKit', :git => 'https://github.com/theKono/ios-KonoViewer.git', :branch => 'development'
+    pod 'KonoViewerKit'
   target 'KonoContentKit-DemoTests' do
     inherit! :search_paths
     # Pods for testing

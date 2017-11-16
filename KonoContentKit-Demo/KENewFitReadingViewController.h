@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum KEOperateButtonType : NSUInteger{
+    KEOperateButtonTypePlay = 0,
+    KEOperateButtonTypeStop = 1,
+    KEOperateButtonTypePrevious = 2,
+    KEOperateButtonTypeNext = 3
+    
+}KEOperateButtonType;
+
 @interface KENewFitReadingViewController : UIViewController
 
 @property (nonatomic, strong) KCBook *bookItem;

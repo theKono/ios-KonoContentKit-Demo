@@ -9,11 +9,17 @@
 #import "KENewFitReadingViewController.h"
 #import "KonoFitreadingView.h"
 #import "KonoNavigationView.h"
+#import "KEDemoContentManager.h"
 
 @interface KENewFitReadingViewController () <UIScrollViewDelegate,KonoFitreadingViewDelegate, KonoFitreadingViewDatasource,KonoNavigationViewDelegate>
 
 @property (nonatomic, strong) KonoFitreadingView *FitReadingViewer;
 @property (nonatomic, strong) KonoNavigationView *navigationView;
+@property (nonatomic, strong) KEDemoContentManager *interactionManager;
+@property (nonatomic, strong) UIButton *nextBtn;
+@property (nonatomic, strong) UIButton *playBtn;
+@property (nonatomic, strong) UIButton *stopBtn;
+@property (nonatomic, strong) UIButton *previousBtn;
 
 @end
 
@@ -43,6 +49,11 @@
     self.navigationView = [KonoNavigationView defatulView];
     self.navigationView.delegate = self;
     [self.view addSubview:self.navigationView];
+    
+    [self initOperateButton];
+
+    
+    self.interactionManager = [[KEDemoContentManager alloc] initWithViewer:self.FitReadingViewer];
     
     _previousScrollOffset = 0;
     
@@ -75,6 +86,66 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - init operate button
+
+- (void)initOperateButton{
+    
+    self.previousBtn =  [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 48)];
+    self.previousBtn.tag = KEOperateButtonTypePrevious;
+    [self.previousBtn setImage:[UIImage imageNamed:@"btn_demo_previous"] forState:UIControlStateNormal];
+    [self.previousBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.previousBtn];
+    
+    [self.previousBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo( self.view.mas_left ).with.offset( 10 );
+        make.bottom.equalTo( self.view.mas_bottom ).with.offset( -10 );
+        
+    }];
+    
+    self.playBtn =  [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 48)];
+    self.playBtn.tag = KEOperateButtonTypePlay;
+    [self.playBtn setImage:[UIImage imageNamed:@"btn_demo_play"] forState:UIControlStateNormal];
+    [self.playBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.playBtn];
+    
+    [self.playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo( self.previousBtn.mas_right  ).with.offset( 10 );
+        make.bottom.equalTo( self.view.mas_bottom ).with.offset( -10 );
+        
+    }];
+    
+    self.stopBtn =  [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 48)];
+    self.stopBtn.tag = KEOperateButtonTypeStop;
+    [self.stopBtn setImage:[UIImage imageNamed:@"btn_demo_stop"] forState:UIControlStateNormal];
+    [self.stopBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.stopBtn];
+    
+    [self.stopBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo( self.playBtn.mas_right  ).with.offset( 10 );
+        make.bottom.equalTo( self.view.mas_bottom ).with.offset( -10 );
+        
+    }];
+    
+    
+    self.nextBtn =  [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 48)];
+    self.nextBtn.tag = KEOperateButtonTypeNext;
+    [self.nextBtn setImage:[UIImage imageNamed:@"btn_demo_next"] forState:UIControlStateNormal];
+    [self.nextBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nextBtn];
+    
+    [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo( self.stopBtn.mas_right ).with.offset( 10 );
+        make.bottom.equalTo( self.view.mas_bottom ).with.offset( -10 );
+        
+    }];
+    
+}
+
+
 - (void)fetchArticleKey {
     
     __weak typeof (self) weakSelf = self;
@@ -93,7 +164,13 @@
     
     
     [[KCService contentManager] getArticleTextForArticle:self.articleItem complete:^(NSData *articleData) {
-        [self.FitReadingViewer renderFitreadingArticleFromData:articleData withImageRefPath:nil requireKey:NO];
+        NSError* error;
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:articleData options:kNilOptions error:&error];
+        ArticleHTMLInfo* articleHTMLInfo = [KonoViewUtil getHTMLTemplateFromArticleDic:json withCSSFilePath:nil];
+        NSURL *bundleFileURL = [NSURL URLWithString:[[KonoViewUtil resourceBundle] bundlePath]];
+        [self.FitReadingViewer loadHTMLString:articleHTMLInfo.htmlString baseURL:bundleFileURL];
+        self.interactionManager.totalSentenceCount = articleHTMLInfo.totalSentenceCount;
+        //[self.FitReadingViewer renderFitreadingArticleFromData:articleData withImageRefPath:nil requireKey:NO];
     } fail:^(NSError *error) {
         NSLog(@"fetch article text data error:%@",error);
     }];
@@ -144,6 +221,30 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+#pragma mark - webview controlling button function
+
+- (void)buttonAction:(id)sender {
+    
+    
+    switch ([sender tag]) {
+        case KEOperateButtonTypeNext:
+            [self.interactionManager playNext];
+            break;
+        case KEOperateButtonTypePlay:
+            [self.interactionManager autoPlay];
+            break;
+        case KEOperateButtonTypeStop:
+            [self.interactionManager stop];
+            break;
+        case KEOperateButtonTypePrevious:
+            [self.interactionManager playPrevious];
+            break;
+        default:
+            break;
+    }
+
 }
 
 @end

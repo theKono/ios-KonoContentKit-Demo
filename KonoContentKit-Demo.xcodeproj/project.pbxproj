@@ -58,6 +58,7 @@
 		4DDF74C91F02360F00A719B5 /* landscape.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF74C81F02360F00A719B5 /* landscape.html */; };
 		A134573453A4AF4E0E370D0A /* libPods-KonoContentKit-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */; };
 		CE7E1B3FA7D568FDE2FE9902 /* libPods-KonoContentKit-DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */; };
+		E888B99A1FBC5656001B231A /* KEDemoContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E888B9991FBC5656001B231A /* KEDemoContentManager.m */; };
 		E8E9011D1F386679006EDCF5 /* KENewArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */; };
 		E8E901561F5E63EA006EDCF5 /* KonoViewerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E901541F5E63EA006EDCF5 /* KonoViewerDemoViewController.m */; };
 		E8E9015B1F5E64F9006EDCF5 /* KENewFitReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E9015A1F5E64F9006EDCF5 /* KENewFitReadingViewController.m */; };
@@ -164,6 +165,8 @@
 		B2FE35BE0EF8C67CA6184D03 /* Pods-KonoContentKit-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KonoContentKit-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KonoContentKit-Demo/Pods-KonoContentKit-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A8A56DE98A6DB8A6EDF499 /* libPods-KonoContentKit-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KonoContentKit-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90328F1FAABD9BE0DCFEB6B /* libPods-KonoContentKit-DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KonoContentKit-DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E888B9981FBC5656001B231A /* KEDemoContentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KEDemoContentManager.h; sourceTree = "<group>"; };
+		E888B9991FBC5656001B231A /* KEDemoContentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KEDemoContentManager.m; sourceTree = "<group>"; };
 		E8E9011B1F386679006EDCF5 /* KENewArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KENewArticleViewController.h; path = Article/KENewArticleViewController.h; sourceTree = "<group>"; };
 		E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KENewArticleViewController.m; path = Article/KENewArticleViewController.m; sourceTree = "<group>"; };
 		E8E901531F5E63EA006EDCF5 /* KonoViewerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonoViewerDemoViewController.h; sourceTree = "<group>"; };
@@ -419,6 +422,8 @@
 				E8E9011C1F386679006EDCF5 /* KENewArticleViewController.m */,
 				E8E901591F5E64F9006EDCF5 /* KENewFitReadingViewController.h */,
 				E8E9015A1F5E64F9006EDCF5 /* KENewFitReadingViewController.m */,
+				E888B9981FBC5656001B231A /* KEDemoContentManager.h */,
+				E888B9991FBC5656001B231A /* KEDemoContentManager.m */,
 			);
 			name = KonoViewerDemo;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 				4D34BA251EFA1BC50063E2C0 /* KEFatPageWebView.m in Sources */,
 				4DDF74711F00C56B00A719B5 /* KEArticleFitReadingViewController.m in Sources */,
 				4DDF74C41F021D0700A719B5 /* KEArticleLandscapeViewController.m in Sources */,
+				E888B99A1FBC5656001B231A /* KEDemoContentManager.m in Sources */,
 				4D8B23251EF11B0600B82050 /* KETextUtil.m in Sources */,
 				4DDF745B1EFCCC7200A719B5 /* KEBookLibraryDetailPageInformationViewController.m in Sources */,
 				4DDF746B1EFCCF7400A719B5 /* KEUtil.m in Sources */,

@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view.
     
     self.FitReadingViewer = [[KonoFitreadingView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
+    [self.FitReadingViewer setUpActionMenu];
     self.FitReadingViewer.actionDelegate = self;
     self.FitReadingViewer.dataSource = self;
     self.FitReadingViewer.scrollView.delegate = self;
@@ -215,6 +215,18 @@
     
 }
 
+- (void)firstMenuItemAction {
+    
+    [self.interactionManager highlightSelectedTextSection];
+    
+}
+
+- (void)secondMenuItemAction {
+    
+    [self.interactionManager querySelectedText];
+    
+}
+
 #pragma mark - navigation view delegate function
 
 - (void)backBtnPressed {
@@ -222,6 +234,9 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+
+
 
 #pragma mark - webview controlling button function
 

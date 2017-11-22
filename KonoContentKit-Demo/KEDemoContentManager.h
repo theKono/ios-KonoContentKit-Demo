@@ -24,4 +24,8 @@
 
 - (void)playPrevious;
 
+- (void)querySelectedText;
+
+- (void)highlightSelectedTextSection;
+
 @end

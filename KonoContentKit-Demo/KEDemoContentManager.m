@@ -62,5 +62,22 @@
 }
 
 
+- (void)querySelectedText {
+    
+    NSString * highlighted = [self.viewer stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
+    [self.viewer stringByEvaluatingJavaScriptFromString:@"removeHighLight()"];
+    
+    NSLog(@"highlighted string:%@",highlighted);
+    
+}
+
+- (void)highlightSelectedTextSection {
+    
+    NSString *highlightDomID = [self.viewer stringByEvaluatingJavaScriptFromString:@"highlightSelectedTextSection()"];
+    
+    NSArray *components = [highlightDomID componentsSeparatedByString:@"-"];
+    self.currentHightSentenceIdx = [[components lastObject] integerValue];
+
+}
 
 @end

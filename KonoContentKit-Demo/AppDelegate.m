@@ -24,6 +24,8 @@
     [contentManager initializeApiURL:PROD_SERVER];
     [contentManager initializeHTMLDecryptSecret:@"aaa"];
     [contentManager initializeBundleDecryptSecret:@"aaa"];
+    [contentManager initializeAccessID:@"1"];
+    [contentManager initializeToken:@"access_token"];
     
     
     return YES;

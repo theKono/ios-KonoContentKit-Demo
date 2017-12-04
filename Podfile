@@ -14,7 +14,7 @@ target 'KonoContentKit-Demo' do
     pod 'WYPopoverController', :git => 'https://github.com/sammcewan/WYPopoverController.git'
     pod 'Masonry'
     #pod 'KonoViewerKit'
-    pod 'KonoViewerKit', :git => 'https://github.com/theKono/ios-KonoViewer.git', :branch => 'ALC/scrolling_content'
+    pod 'KonoViewerKit', :git => 'https://github.com/theKono/ios-KonoViewer.git', :branch => 'ALC/customize_functionality'
   target 'KonoContentKit-DemoTests' do
     inherit! :search_paths
     # Pods for testing

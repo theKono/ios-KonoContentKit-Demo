@@ -17,7 +17,7 @@ PODS:
   - WYPopoverController (0.3.9)
 
 DEPENDENCIES:
-  - KonoViewerKit (from `https://github.com/theKono/ios-KonoViewer.git`, branch `ALC/scrolling_content`)
+  - KonoViewerKit (from `https://github.com/theKono/ios-KonoViewer.git`, branch `ALC/customize_functionality`)
   - Masonry
   - MBProgressHUD (~> 0.8)
   - MZFormSheetController (~> 1.4.0)
@@ -26,14 +26,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   KonoViewerKit:
-    :branch: ALC/scrolling_content
+    :branch: ALC/customize_functionality
     :git: https://github.com/theKono/ios-KonoViewer.git
   WYPopoverController:
     :git: https://github.com/sammcewan/WYPopoverController.git
 
 CHECKOUT OPTIONS:
   KonoViewerKit:
-    :commit: 9a2193c90f889a9d216084c4ce5d7a1ee6efe999
+    :commit: 6ba245281727ba51cb3217b4f6811bb76ba9a1af
     :git: https://github.com/theKono/ios-KonoViewer.git
   WYPopoverController:
     :commit: 9b8011bd95bd95f6fca6a0afa78965fbf645a062
@@ -50,6 +50,6 @@ SPEC CHECKSUMS:
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
 
-PODFILE CHECKSUM: bb15499bba0c3376248d5140bc735e6e524326fc
+PODFILE CHECKSUM: 0b7c0ee6dd8b19ee088e708fa974be2e8bfb09fb
 
 COCOAPODS: 1.0.1

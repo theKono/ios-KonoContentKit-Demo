@@ -223,8 +223,10 @@
 
 - (void)secondMenuItemAction {
     
-    [self.interactionManager querySelectedText];
-    
+    //[self.interactionManager querySelectedText];
+    //NSString *answer = [self.interactionManager removeTextInSentence:1 withQuizNo:0];
+    NSString *answer = [self.interactionManager removeTextInHighlightSentenceWithQuizNo:0];
+    NSLog(@"empty answer:%@",answer);
 }
 
 #pragma mark - navigation view delegate function

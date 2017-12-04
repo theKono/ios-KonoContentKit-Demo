@@ -61,6 +61,23 @@
     
 }
 
+- (NSString *)removeTextInSentence:(NSInteger)sentenceID withQuizNo:(NSInteger)quizNo{
+    
+     NSString *originalAnswer = [self.viewer stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat: @"removeTextInSentence('%ld,%ld')",sentenceID,quizNo]];
+    
+    return originalAnswer;
+}
+
+- (NSString *)removeTextInHighlightSentenceWithQuizNo:(NSInteger)quizNo{
+    
+    NSString *highlightDomID = [self.viewer stringByEvaluatingJavaScriptFromString:@"getHighlightSelectedObjID()"];
+    NSArray *components = [highlightDomID componentsSeparatedByString:@"-"];
+    NSInteger highlightSentenceIdx = [[components lastObject] integerValue];
+    NSString *originalAnswer = [self.viewer stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat: @"removeTextInSentence('%ld,%ld')",highlightSentenceIdx,quizNo]];
+    
+    return originalAnswer;
+}
+
 
 - (void)querySelectedText {
     

@@ -26,6 +26,10 @@
 
 - (void)querySelectedText;
 
+- (NSString *)removeTextInSentence:(NSInteger)sentenceID withQuizNo:(NSInteger)quizNo;
+
+- (NSString *)removeTextInHighlightSentenceWithQuizNo:(NSInteger)quizNo;
+
 - (void)highlightSelectedTextSection;
 
 @end
